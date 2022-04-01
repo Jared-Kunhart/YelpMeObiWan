@@ -1,6 +1,6 @@
 <h1 align="center"> Yelp me Obi-Wan </h1>
 
-<h5 align="center">  By:  <a href="https://github.com/Jared-Kunhart">Jared Kunhart</a> - <a href="https://input-app.herokuapp.com/"><i>Live site</i></h5>
+<h5 align="center">  By:  <a href="https://github.com/Jared-Kunhart">Jared Kunhart</a> - <a href="https://yelpmeobiwan.herokuapp.com/"><i>Live site</i></h5>
 
 ### Table of Contents
 - [We value your Input](#stories)
