@@ -1,3 +1,8 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+#navarea {
+    display: flex;
+    justify-content: center;
+}

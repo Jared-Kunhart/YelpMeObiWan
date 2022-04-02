@@ -26,8 +26,9 @@ function LoginForm() {
           <li key={idx}>{error}</li>
         ))}
       </ul>
+    <div id="login">
       <label>
-        Username or Email
+        Handle or HoloMail:
         <input
           type="text"
           value={credential}
@@ -36,7 +37,7 @@ function LoginForm() {
         />
       </label>
       <label>
-        Password
+        Password:
         <input
           type="password"
           value={password}
@@ -45,6 +46,7 @@ function LoginForm() {
         />
       </label>
       <button type="submit">Log In</button>
+    </div>
     </form>
   );
 }

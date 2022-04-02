@@ -11,6 +11,12 @@ border-radius: 4px;
 cursor: pointer;
 }
 
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 button {
     text-align: center;
 	display: inline-block;
@@ -18,9 +24,6 @@ button {
     font-weight: bold;
     border: solid rgb(92, 92, 92) 2px;
     padding: 10px 10px 10px 10px;
-    -webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	-o-border-radius: 7px;
 	border-radius: 7px;
     box-shadow: 0 .2em rgb(105, 120, 138);
     cursor: pointer;
