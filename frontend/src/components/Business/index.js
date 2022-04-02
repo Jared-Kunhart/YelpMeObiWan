@@ -5,7 +5,6 @@ import { getAllBusinesses } from '../../store/business';
 const Businesses = () => {
     const dispatch = useDispatch();
     const businesses = useSelector(state => Object.values(state.business))
-    console.log(`<<<<<<<<<<<<<<<<<${businesses}>>>>>>>>>>>>>>>>>`)
     useEffect(() => {
         dispatch(getAllBusinesses())
     }, [dispatch])
@@ -16,6 +15,8 @@ const Businesses = () => {
             {businesses?.map(business =>
                 <li key={business.id}>
                     {business.title}
+
+                    <img src={business.imageUrl}></img>
                 </li>
                 )}
             </ul>

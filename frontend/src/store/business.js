@@ -28,7 +28,6 @@ export const getAllBusinesses = () => async (dispatch) => {
     const response = await fetch('/api/businesses')
     const data = await response.json()
     const businesses = data.businesses
-    console.log(`<<<<<<<<<<<<<<${businesses}??????????`)
     dispatch(loadBusinesses(businesses))
 }
 
