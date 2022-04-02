@@ -17,13 +17,14 @@
 - Search
 
 #### Technology used
-- JavaScript ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript_64x64.png)
-- HTML ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html_64x64.png)
-- CSS ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css_64x64.png)
+- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript_32x32.png) JavaScript 
+- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html_32x32.png) HTML
+- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css_32x32.png) CSS
 - Postgres
 - Node.Js
-![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/react/react_64x64.png)
-![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/java/java_64x64.png)
+  
+<!-- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/react/react_64x64.png) -->
+<!-- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/java/java_64x64.png) -->
   
 #### How to use this application
 
