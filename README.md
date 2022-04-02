@@ -17,9 +17,9 @@
 - Search
 
 #### Technology used
-- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript_32x32.png) JavaScript 
-- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html_32x32.png) HTML
-- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css_32x32.png) CSS
+- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript_24x24.png) JavaScript 
+- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html_24x24.png) HTML
+- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css_24x24.png) CSS
 - Postgres
 - Node.Js
   
