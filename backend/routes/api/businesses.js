@@ -29,13 +29,11 @@ router.put('/:id(\\d+)', asyncHandler(async(req, res) => {
   res.json({ business })
 }))
 
-// const businessId = parseInt(req.params.id, 10)
-// const businessToUpdate = await Business.findByPk(businessId);
-
-// const {  title, description, location, imageUrl } = req.body
-// const business = {  title, description, location, imageUrl }
-
-// await businessToUpdate.update(business)
+router.delete('/:id(\\d+)', async(req, res) => {
+  const business = await Business.findByPk(req.params.id)
+  await business.destroy()
+  res.status(204).end()
+})
 
 /*
 
