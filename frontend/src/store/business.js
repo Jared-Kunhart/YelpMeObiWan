@@ -40,7 +40,6 @@ export const createBusiness = (business) => async (dispatch) => {
     if (response.ok) {
         const data = await response.json()
         const business = data.business
-        console.log("Adding:", business)
         dispatch(addOneBusiness(business))
     }
 }
