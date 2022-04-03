@@ -15,8 +15,6 @@ const Businesses = () => {
             {businesses?.map(business =>
                 <li key={business.id}>
                     {business.title}
-
-                    <img src={business.imageUrl}></img>
                 </li>
                 )}
             </ul>
