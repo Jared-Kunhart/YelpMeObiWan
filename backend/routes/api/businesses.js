@@ -19,9 +19,27 @@ router.post('/', requireAuth, asyncHandler(async(req, res) => {
     return res.json({ business })
 }))
 
+router.put('/:id(\\d+)', asyncHandler(async(req, res) => {
+  const business = await Business.findByPk(req.params.id);
+  business.title = req.body.title || business.title
+  business.description = req.body.description || business.description
+  business.location = req.body.location || business.location
+  business.imageUrl = req.body.imageUrl || business.imageUrl
+  await business.save()
+  res.json({ business })
+}))
+
+// const businessId = parseInt(req.params.id, 10)
+// const businessToUpdate = await Business.findByPk(businessId);
+
+// const {  title, description, location, imageUrl } = req.body
+// const business = {  title, description, location, imageUrl }
+
+// await businessToUpdate.update(business)
+
 /*
 
-Test for POSTing a business
+Fetch test for business
 
 fetch('/api/businesses', {
   method: 'POST',
