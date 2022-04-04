@@ -3,7 +3,7 @@ import { csrfFetch } from "./csrf";
 const LOAD_BUSINESSES = 'businesses/loadBusinesses';
 const ADD_ONE_BUSINESS = 'businesses/addOneBusiness';
 const REMOVE_ONE_BUSINESS = 'businesses/removeOneBusiness';
-// add update later
+const UPDATE_BUSINESS = 'businesses/updateBusiness'
 
 const loadBusinesses = (payload) => {
     return {
@@ -15,6 +15,13 @@ const loadBusinesses = (payload) => {
 export const addOneBusiness = (payload) => {
     return {
         type: ADD_ONE_BUSINESS,
+        payload
+    }
+}
+
+const updateBusiness = (payload) => {
+    return {
+        type: UPDATE_BUSINESS,
         payload
     }
 }
@@ -46,8 +53,21 @@ export const createBusiness = (business) => async (dispatch) => {
     }
 }
 
+export const editBusiness = (payload) => async (dispatch) => {
+    const response = await csrfFetch(`/api/businesses/${payload.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    if (response.ok) {
+        const data = await response.json()
+        const updatedBusiness = data.business
+        dispatch(updateBusiness(updatedBusiness))
+    }
+}
+
 export const deleteBusiness = (id) => async (dispatch) => {
-    const response = await fetch(`/api/businesses/${id}`, {
+    const response = await csrfFetch(`/api/businesses/${id}`, {
         method: 'DELETE'
     })
     if (response.ok) {
@@ -71,6 +91,11 @@ const businessReducer = (state = initialState, action) => {
             newState = {...state}
             delete newState[action.payload]
             return newState;
+        case UPDATE_BUSINESS:
+            return {
+                ...state,
+                [action.payload.id]: action.payload
+            }
         default:
             return state;
     }

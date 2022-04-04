@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllBusinesses } from '../../store/business';
+import BusinessDetail from './BusinessDetail';
 
 const Businesses = () => {
     const dispatch = useDispatch();
@@ -11,14 +12,20 @@ const Businesses = () => {
 
     return (
         <div>
-            <ul>
-            {businesses?.map(business =>
-                <li key={business.id}>
-                    {business.title}
-                </li>
-                )}
-            </ul>
+            <div className='businesses'>
+              {businesses?.map(({ id, title, description, location, imageUrl }) => (
+                <BusinessDetail
+                    key={id}
+                    id={id}
+                    title={title}
+                    description={description}
+                    location={location}
+                    imageUrl={imageUrl}
+                />
+              ))}
+            </div>
         </div>
+
     )
 }
 
