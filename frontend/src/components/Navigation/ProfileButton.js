@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import Businesses from "../Business/index";
+import CreateBusinessPage from "../Business/CreateBusiness";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ function ProfileButton({ user }) {
         </ul>
       )}
       <Businesses />
+      <CreateBusinessPage />
     </>
   );
 }
