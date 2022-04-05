@@ -2,3 +2,8 @@
     height: 500px;
     width: 600px;
 }
+
+.business-detail {
+    display: flex;
+    flex-direction: column;
+}

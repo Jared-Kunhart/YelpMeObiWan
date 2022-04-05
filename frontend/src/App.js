@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+// import LandingPage from "./components/LandingPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
-
+{/* <LandingPage /> */}
   return (
     <>
       <Navigation isLoaded={isLoaded} />

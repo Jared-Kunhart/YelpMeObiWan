@@ -39,18 +39,12 @@ router.delete('/:id(\\d+)', async(req, res) => {
 
 Fetch test for business
 
-fetch('/api/businesses', {
-  method: 'POST',
+fetch('/api/notebooks', {
+  method: 'GET',
   headers: {
     "Content-Type": "application/json",
     "XSRF-TOKEN": `NXh3J3cu-ngitPbH7CrHWmrEdGkiYwh5xlKo`
   },
-  body: JSON.stringify({
-    title: "Adding Another Test Busines",
-    description: "Adding another description",
-    location: "Adding a loction",
-    imageUrl: "Dead Link"
-  })
 }).then(res => res.json()).then(data => console.log(data));
 
 */
