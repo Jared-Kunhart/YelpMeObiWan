@@ -4,7 +4,7 @@ import { Modal } from '../../context/Modal';
 import EditBusiness from './EditBusiness';
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { getOneBusiness } from '../../store/business';
+// import { getOneBusiness } from '../../store/business';
 import './BusinessDetail.css'
 
 const BusinessDetail = ({ businesses }) => {
