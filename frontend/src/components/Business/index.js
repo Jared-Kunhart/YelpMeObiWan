@@ -23,7 +23,7 @@ const Businesses = () => {
             })}
         </nav>
     <Route path='/businesses/:businessId'>
-        <BusinessDetail />
+        <BusinessDetail businesses={businesses} />
     </Route>
     </main>
     )

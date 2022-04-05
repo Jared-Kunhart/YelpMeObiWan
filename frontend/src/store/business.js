@@ -4,10 +4,18 @@ const LOAD_BUSINESSES = 'businesses/loadBusinesses';
 const ADD_ONE_BUSINESS = 'businesses/addOneBusiness';
 const REMOVE_ONE_BUSINESS = 'businesses/removeOneBusiness';
 const UPDATE_BUSINESS = 'businesses/updateBusiness'
+const GET_ONE_BUSINESS = 'businesses/getOneBusiness'
 
 const loadBusinesses = (payload) => {
     return {
         type: LOAD_BUSINESSES,
+        payload
+    }
+}
+
+const getOne = (payload) => {
+    return {
+        type: GET_ONE_BUSINESS,
         payload
     }
 }
@@ -38,6 +46,12 @@ export const getAllBusinesses = () => async (dispatch) => {
     const data = await response.json()
     const businesses = data.businesses
     dispatch(loadBusinesses(businesses))
+}
+
+export const getOneBusiness = (id) => async (dispatch) => {
+    const response = await fetch(`/api/businesses/${id}`)
+    const business = await response.json()
+    dispatch(getOne(business))
 }
 
 export const createBusiness = (business) => async (dispatch) => {
@@ -95,6 +109,15 @@ const businessReducer = (state = initialState, action) => {
             return {
                 ...state,
                 [action.payload.id]: action.payload
+            }
+        case ADD_ONE_BUSINESS:
+            return {
+                ...state,
+                [action.payload.id]: {
+                    ...state[action.payload.id],
+                    ...action.payload
+                }
+
             }
         default:
             return state;

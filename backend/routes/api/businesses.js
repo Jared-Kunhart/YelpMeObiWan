@@ -12,6 +12,12 @@ router.get('/', asyncHandler(async(req, res) => {
     return res.json({businesses})
 }))
 
+router.get('/:id', asyncHandler(async(req, res) => {
+  const id = +req.params.id
+  const business = await Business.findByPk(id)
+  return res.json({business})
+}))
+
 router.post('/', requireAuth, asyncHandler(async(req, res) => {
     const { title, description, location, imageUrl } = req.body
     const ownerId = req.user.id
