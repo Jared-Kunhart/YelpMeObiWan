@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import Businesses from "../Business/index";
 import CreateBusinessPage from "../Business/CreateBusiness";
+import { useHistory } from "react-router-dom";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-
+  const history = useHistory()
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -28,6 +29,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    return history.push("/")
   };
 
   return (

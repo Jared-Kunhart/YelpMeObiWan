@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllBusinesses } from '../../store/business';
 import BusinessDetail from './BusinessDetail';
-import { NavLink, Link, Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
+import './BusinessDetail.css'
 
 const Businesses = () => {
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Businesses = () => {
             })}
         </nav>
     <Route path='/businesses/:businessId'>
-        <BusinessDetail businesses={businesses} />
+        <BusinessDetail />
     </Route>
     </main>
     )

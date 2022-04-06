@@ -16,14 +16,12 @@
     font-style: normal;
 }
 
-body {
-    font-family: 'Uni Sans', sans-serif;
-    font-weight: 900;
-}
-
 #navarea {
     display: flex;
     justify-content: center;
+    background-color: black;
+    position: relative;
+    top: -200px;
 }
 
 button {

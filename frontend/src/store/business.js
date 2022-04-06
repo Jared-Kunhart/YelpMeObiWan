@@ -110,7 +110,7 @@ const businessReducer = (state = initialState, action) => {
                 ...state,
                 [action.payload.id]: action.payload
             }
-        case ADD_ONE_BUSINESS:
+        case GET_ONE_BUSINESS:
             return {
                 ...state,
                 [action.payload.id]: {
