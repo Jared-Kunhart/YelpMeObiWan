@@ -6,10 +6,10 @@ export default function LandingPage() {
     return (
     <div className='splashWrapper'>
         <div className="splash">
-        </div>
+    </div>
         <div>
-        <LoginFormModal />
-        <SignupFormModal />
+            <LoginFormModal />
+            <SignupFormModal />
         </div>
     </div>
     )

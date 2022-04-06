@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'Uni Sans';
+    src: url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168547/unisans-font/UniSansHeavyCAPS.woff2') format('woff2'),
+    url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168547/unisans-font/UniSansHeavyCAPS.woff') format('woff'),
+    url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168548/unisans-font/UniSansHeavyCAPS.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Uni Sans';
+    src: url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168545/unisans-font/UniSansThinCAPS.woff2') format('woff2'),
+    url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168545/unisans-font/UniSansThinCAPS.woff') format('woff'),
+    url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168548/unisans-font/UniSansThinCAPS.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700,800');
+
 #imageUrl {
     height: 500px;
     width: 600px;
@@ -8,3 +28,88 @@
     flex-direction: column;
 }
 
+.profileWrapper {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+#profileButton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navbar {
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+}
+
+#searchSplashArea {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    background-color: aqua;
+    flex-direction: column;
+}
+
+.yelpImage {
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar {
+    align-self: center;
+}
+
+#searchBar {
+    display: flex;
+    justify-content: center;
+}
+
+.mainSearch {
+    width: 30%;
+    font-family: 'Dosis', sans-serif;
+}
+
+.businessCard {
+    display: flex;
+    flex-direction: row;
+}
+
+#businessImage {
+    width: 100%;
+    height: fit-content;
+}
+
+#businessTitle {
+    font-family: 'Uni Sans', sans-serif;
+    font-weight: 900;
+    color: black;
+}
+
+#businessDescription {
+    font-family: 'Dosis', sans-serif;
+    padding: 5px;
+}
+
+#businessLocation {
+    font-family: 'Dosis', sans-serif;
+    padding: 5px;
+}
+
+.card {
+    width: 100%;
+    max-width: 40em;
+    height: 100%;
+    background: #fff;
+    margin: 2.5em auto;
+    padding: 1em;
+    box-shadow: 0 0 5px black;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

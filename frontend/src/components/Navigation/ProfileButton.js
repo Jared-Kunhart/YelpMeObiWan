@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import Businesses from "../Business/index";
-import CreateBusinessPage from "../Business/CreateBusiness";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -29,6 +27,8 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    console.log('hi')
+    // return <Redirect to="/" />
     return history.push("/")
   };
 
@@ -46,8 +46,6 @@ function ProfileButton({ user }) {
           </li>
         </ul>
       )}
-      <Businesses />
-      <CreateBusinessPage />
     </>
   );
 }
