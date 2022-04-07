@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import LandingPage from "./components/LandingPage";
 import Businesses from "./components/Business";
 import ProtectedRoute from "./ProtectedRoute";
+import BusinessDetail from "./components/Business/BusinessDetail";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -29,6 +30,9 @@ function App() {
       {sessionUser ? <Redirect to="/businesses" /> : <Splash />}
     </Route>
     <ProtectedRoute exact path="/businesses" sessionUser={sessionUser} />
+    <Route path='/businesses/:businessId'>
+        <BusinessDetail />
+    </Route>
     </Switch>
     </>
   );

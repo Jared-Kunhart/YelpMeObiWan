@@ -102,10 +102,6 @@ const Businesses = ({sessionUser}) => {
             })}
             </div>
         </nav>
-    {/* <Route path='/businesses/:businessId'>
-        <BusinessDetail />
-
-    </Route> */}
     </main>
     )
 }
