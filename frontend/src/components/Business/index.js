@@ -20,7 +20,7 @@ const Businesses = ({sessionUser}) => {
         setShowMenu(true);
       };
 
-    let inputTags = document.getElementsByTagName("input")
+    // let inputTags = document.getElementsByTagName("input")
 
     // useEffect(() => {
     //     if (!showMenu) return;
@@ -28,8 +28,10 @@ const Businesses = ({sessionUser}) => {
     //     const closeMenu = () => {
     //       setShowMenu(false);
     //     };
+        // if they click input tag don't closemenu
+        // else if they click document close
 
-    //     inputTags.addEventListener('click', )
+    //     inputTags.addEventListener('click',
 
     //     document.addEventListener('click', closeMenu);
 
@@ -81,6 +83,7 @@ const Businesses = ({sessionUser}) => {
                     <input className="mainSearch" placeholder="Find Cantina's, Droid Repair, Spaceports..."></input>
                     </div>
                 </div>
+
             </div>
             <div className="businessCard">
             {businesses?.map(business => {

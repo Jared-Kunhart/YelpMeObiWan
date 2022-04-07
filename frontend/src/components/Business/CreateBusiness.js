@@ -14,12 +14,12 @@ function CreateBusinessPage({ setShowMenu }) {
 
   useEffect(() => {
     let errors = [];
-    if (title.length < 1) errors.push("You need a name for your business Scoundrel")
-    if (title.length > 50) errors.push("Can't be longer than 50 parsecs")
-    if (description.length < 1) errors.push("Describe your business for future citizens")
-    if (location.length < 1) errors.push("Put a location so citizens know where to find your business")
-    if (location.length > 50) errors.push("Can't be longer than 50 parsecs")
-    if (imageUrl.match(/(jpe?g|tiff|png|gif|bmp)/) === null) errors.push('You need to prove a way for citizens to see your business')
+    if (title.length < 1) errors.push("You need a name for your Business scoundrel.")
+    if (title.length > 50) errors.push("Can't be longer than 50 parsecs.")
+    if (description.length < 1) errors.push("Describe your Business for future citizens.")
+    if (location.length < 1) errors.push("Put a location so citizens know where to find your Business.")
+    if (location.length > 50) errors.push("Can't be longer than 50 parsecs.")
+    if (imageUrl.match(/(jpe?g|tiff|png|gif|bmp)/) === null) errors.push('You need to prove a way for citizens to see your Business.')
     setErrors(errors)
   }, [title, description, location, imageUrl])
 
@@ -57,7 +57,7 @@ function CreateBusinessPage({ setShowMenu }) {
       </ul>
     <div id="businessForm">
       <label>
-        Title:
+        Name:
         <input
           type="text"
           value={title}
