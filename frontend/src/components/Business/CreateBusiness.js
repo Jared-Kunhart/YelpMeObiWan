@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createBusiness } from "../../store/business";
 
@@ -12,6 +12,17 @@ function CreateBusinessPage({ setShowMenu }) {
   const [imageUrl, setImageUrl] = useState("");
   const [errors, setErrors] = useState([]);
 
+  useEffect(() => {
+    let errors = [];
+    if (title.length < 1) errors.push("You need a name for your business Scoundrel")
+    if (title.length > 50) errors.push("Can't be longer than 50 parsecs")
+    if (description.length < 1) errors.push("Describe your business for future citizens")
+    if (location.length < 1) errors.push("Put a location so citizens know where to find your business")
+    if (location.length > 50) errors.push("Can't be longer than 50 parsecs")
+    if (imageUrl.match(/(jpe?g|tiff|png|gif|bmp)/) === null) errors.push('You need to prove a way for citizens to see your business')
+    setErrors(errors)
+  }, [title, description, location, imageUrl])
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,7 +34,7 @@ function CreateBusinessPage({ setShowMenu }) {
     };
 
     await dispatch(createBusiness(business));
-
+    setShowMenu(false)
     reset();
   };
 
@@ -51,7 +62,6 @@ function CreateBusinessPage({ setShowMenu }) {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          required
         />
       </label>
       <label>
@@ -60,7 +70,6 @@ function CreateBusinessPage({ setShowMenu }) {
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          required
         />
       </label>
       <label>
@@ -69,7 +78,6 @@ function CreateBusinessPage({ setShowMenu }) {
           type="text"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          required
         />
       </label>
       <label>
@@ -78,10 +86,9 @@ function CreateBusinessPage({ setShowMenu }) {
           type="text"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
-          required
         />
       </label>
-      <button type="submit">Create Business</button>
+      <button type="submit" disabled={errors.length > 0}>Create Business</button>
       <button type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>

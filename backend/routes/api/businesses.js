@@ -1,6 +1,6 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
-const { handleValidationErrors } = require('../../utils/validation');
+const { businessNotFoundError, validateBusiness } = require('../../utils/validation');
 const { requireAuth } = require('../../utils/auth')
 
 const db = require('../../db/models');

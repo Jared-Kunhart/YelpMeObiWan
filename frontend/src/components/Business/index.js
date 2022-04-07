@@ -22,19 +22,19 @@ const Businesses = ({sessionUser}) => {
 
     let inputTags = document.getElementsByTagName("input")
 
-    useEffect(() => {
-        if (!showMenu) return;
+    // useEffect(() => {
+    //     if (!showMenu) return;
 
-        const closeMenu = () => {
-          setShowMenu(false);
-        };
+    //     const closeMenu = () => {
+    //       setShowMenu(false);
+    //     };
 
-        // inputTags.addEventListener('click', )
+    //     inputTags.addEventListener('click', )
 
-        // document.addEventListener('click', closeMenu);
+    //     document.addEventListener('click', closeMenu);
 
-        return () => document.removeEventListener("click", closeMenu);
-      }, [showMenu]);
+    //     return () => document.removeEventListener("click", closeMenu);
+    //   }, [showMenu]);
 
     function randomImg() {
     let images = [
@@ -54,16 +54,16 @@ const Businesses = ({sessionUser}) => {
 
     <main>
         <nav>
-        <div id="backgroundFloat" onLoad={randomImg} on>
+        <div id="backgroundFloat" onLoad={randomImg}>
           <div id="navbar">
             <div className="toolbar">
               <div className="homeLink">
               <Link to="/businesses">Home</Link>
               </div>
               <div className="createLink">
-                <Link onClick={openMenu}>
+                <div onClick={openMenu}>
                 Create a Business
-                </Link>
+                </div>
                 {showMenu && (
                     <div className="create-dropdown">
                         <CreateBusinessPage setShowMenu={setShowMenu} />
@@ -83,20 +83,20 @@ const Businesses = ({sessionUser}) => {
                 </div>
             </div>
             <div className="businessCard">
-            {businesses.map(business => {
+            {businesses?.map(business => {
                 return (
-                <div className="card">
-                    <Link key={business.id} to={`/businesses/${business.id}`}>
+                <div className="card" key={business?.id}>
+                    <Link to={`/businesses/${business?.id}`}>
                     <div className="cardHover">
                         <div>
-                        <figure><img id="businessImage" src={business.imageUrl} alt=""></img></figure>
+                        <figure><img id="businessImage" src={business?.imageUrl} alt=""></img></figure>
                         </div>
                     </div>
 
-                        <div id="businessTitle">{business.title}</div>
+                        <div id="businessTitle">{business?.title}</div>
                     </Link>
-                    <div id="businessDescription">{business.description}</div>
-                    <div id="businessLocation">Location: {business.location}</div>
+                    <div id="businessDescription">{business?.description}</div>
+                    <div id="businessLocation">Location: {business?.location}</div>
                 </div>
                 )
             })}

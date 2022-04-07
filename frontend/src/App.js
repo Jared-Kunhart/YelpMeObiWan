@@ -6,6 +6,7 @@ import LandingPage from "./components/LandingPage";
 import Businesses from "./components/Business";
 import ProtectedRoute from "./ProtectedRoute";
 import BusinessDetail from "./components/Business/BusinessDetail";
+import CreateBusinessPage from "./components/Business/CreateBusiness";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);

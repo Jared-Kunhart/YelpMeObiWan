@@ -12,6 +12,10 @@ html {
    align-items: center;
    }
 
+.loginButtons {
+    display: flex;
+}
+
 .splash {
     background-image: url('../../../public/images/mandalorian-starwars.gif');
     background-repeat: no-repeat;
