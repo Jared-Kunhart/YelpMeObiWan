@@ -4,6 +4,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import LandingPage from "./components/LandingPage";
 import Businesses from "./components/Business";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -27,9 +28,7 @@ function App() {
     <Route exact path="/">
       {sessionUser ? <Redirect to="/businesses" /> : <Splash />}
     </Route>
-    <Route path="/businesses">
-      <Businesses sessionUser={sessionUser} />
-    </Route>
+    <ProtectedRoute exact path="/businesses" sessionUser={sessionUser} />
     </Switch>
     </>
   );

@@ -18,6 +18,15 @@
 
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700,800');
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
 #imageUrl {
     height: 500px;
     width: 600px;
@@ -35,21 +44,33 @@
 }
 
 #profileButton {
-    display: flex;
-    justify-content: flex-end;
+    margin-left: 185px;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+#backgroundFloat {
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: visible;
+    height: 600px;
 }
 
 #navbar {
     display: flex;
     justify-content: center;
-    background-color: grey;
 }
 
 #searchSplashArea {
     display: flex;
     justify-content: center;
-    height: 250px;
-    background-color: aqua;
+    height: 400px;
     flex-direction: column;
 }
 
@@ -59,7 +80,29 @@
 }
 
 .toolbar {
+    font-family: 'Dosis', sans-serif;
+    margin: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
     align-self: center;
+    display: flex;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.homeLink {
+    padding: 20px;
+}
+
+.createLink {
+    padding: 20px;
+}
+
+.reviewLink {
+    padding: 20px;
 }
 
 #searchBar {
@@ -96,6 +139,28 @@
 #businessLocation {
     font-family: 'Dosis', sans-serif;
     padding: 5px;
+    font-weight: 600;
+}
+
+.createLink {
+    display: flex;
+    justify-content: center;
+}
+
+.create-dropdown {
+    position: absolute;
+    display: inline-grid;
+    border-radius: 25px;
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Dosis', sans-serif;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+    top: 75px;
+    left: 375px;
+    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .7);
 }
 
 .card {
@@ -105,11 +170,60 @@
     background: #fff;
     margin: 2.5em auto;
     padding: 1em;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+
+#businessTitle{
+    cursor:alias;
+}
+
+.cardHover figure {
+	position: relative;
+    cursor:alias;
+}
+
+.cardHover figure::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+.cardHover figure:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
 }

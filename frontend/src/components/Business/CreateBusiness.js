@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { Redirect } from "react-router-dom";
 import { createBusiness } from "../../store/business";
-// import './SignupForm.css'
+
 
 function CreateBusinessPage() {
   const dispatch = useDispatch();
@@ -28,15 +26,6 @@ function CreateBusinessPage() {
 
     reset();
   };
-
-//   useEffect(() => {
-//     let errors = []
-//     if (title.length < 1) errors.push("Name field is required")
-//     if (title.length > 50) errors.push("Name must be no greater than 50 characters.")
-//     if (location.length < 1) errors.push("Name field is required")
-//     if (imageUrl.length < 1) errors.push("Name field is required")
-//     setErrors(errors)
-//   }, [title, location, imageUrl])
 
   const reset = () => {
     setTitle("");

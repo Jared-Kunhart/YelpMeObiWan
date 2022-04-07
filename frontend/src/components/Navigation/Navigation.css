@@ -24,6 +24,11 @@
     top: -200px;
 }
 
+.profile-dropdown {
+    position: absolute;
+    display: inline-grid;
+}
+
 button {
     font-family: 'Uni Sans', sans-serif;
     font-weight: 900;
