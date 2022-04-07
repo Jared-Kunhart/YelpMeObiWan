@@ -20,6 +20,8 @@ const Businesses = ({sessionUser}) => {
         setShowMenu(true);
       };
 
+    let inputTags = document.getElementsByTagName("input")
+
     useEffect(() => {
         if (!showMenu) return;
 
@@ -27,7 +29,9 @@ const Businesses = ({sessionUser}) => {
           setShowMenu(false);
         };
 
-        document.addEventListener('click', closeMenu);
+        // inputTags.addEventListener('click', )
+
+        // document.addEventListener('click', closeMenu);
 
         return () => document.removeEventListener("click", closeMenu);
       }, [showMenu]);
@@ -58,11 +62,11 @@ const Businesses = ({sessionUser}) => {
               </div>
               <div className="createLink">
                 <Link onClick={openMenu}>
-              Create a Business
+                Create a Business
                 </Link>
                 {showMenu && (
                     <div className="create-dropdown">
-                        <CreateBusinessPage />
+                        <CreateBusinessPage setShowMenu={setShowMenu} />
                     </div>
                 )}
               </div>

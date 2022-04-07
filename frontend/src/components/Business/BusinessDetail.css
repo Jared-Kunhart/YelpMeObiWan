@@ -22,6 +22,14 @@ a {
     text-decoration: none;
 }
 
+/* label {
+    padding: 10px;
+}
+
+input {
+    width: 10%;
+} */
+
 a:visited {
     color: #fff;
     text-decoration: none;
@@ -150,9 +158,11 @@ a:visited {
 .create-dropdown {
     position: absolute;
     display: inline-grid;
-    border-radius: 25px;
-    padding: 5px;
-    margin: 5px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: rgba(186, 186, 186, 0.404);
+    padding: 1px;
+    margin: 1px;
     font-family: 'Dosis', sans-serif;
     text-shadow: -1px 1px 2px #000,
     1px 1px 2px #000,

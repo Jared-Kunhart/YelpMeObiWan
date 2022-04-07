@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createBusiness } from "../../store/business";
 
 
-function CreateBusinessPage() {
+function CreateBusinessPage({ setShowMenu }) {
   const dispatch = useDispatch();
   const businesses = useSelector(state => Object.values(state.business))
   const [title, setTitle] = useState("");
@@ -25,6 +25,11 @@ function CreateBusinessPage() {
     await dispatch(createBusiness(business));
 
     reset();
+  };
+
+  const handleCancelClick = (e) => {
+    e.preventDefault()
+    setShowMenu(false)
   };
 
   const reset = () => {
@@ -77,6 +82,7 @@ function CreateBusinessPage() {
         />
       </label>
       <button type="submit">Create Business</button>
+      <button type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>
   );
