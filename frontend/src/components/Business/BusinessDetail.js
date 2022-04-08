@@ -6,7 +6,7 @@ import { deleteBusiness } from '../../store/business';
 import EditBusiness from './EditBusiness';
 import Reviews from '../Review';
 // import { getOneBusiness } from '../../store/business';
-import './BusinessDetail.css'
+import './ReviewSlider.css'
 
 const BusinessDetail = () => {
   const history = useHistory()
@@ -19,25 +19,51 @@ const BusinessDetail = () => {
     dispatch(deleteBusiness(businessId));
     history.push('/')
   };
+
   return (
-    <div className='business-detail'>
-      <img id="imageUrl" src={business?.imageUrl} alt='' />
-      <span className='business-title'>{business?.title}</span>
-      <p>{business?.description}</p>
-      <p>{business?.location}</p>
-      <div className='button-row'>
-        <button onClick={() => handleDelete(businessId)} className='delete-button'>
-          Delete Business
-        </button>
-        <button onClick={() => setShowModal(true)}>Edit Business</button>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <EditBusiness business={business} hideModal={() => setShowModal(false)} />
-        </Modal>
-      )}
-      <div>
-        <Reviews />
-      </div>
+    <div className='wrapper'>
+      <div className='content'>
+        <div className='bg-shape'>
+          <img src='/images/stormtrooper.jpg' alt='' id="yoda"></img>
+        </div>
+
+        <div className='business-img'>
+            <div className='business-img__item' id={businessId}>
+              <img src={business.imageUrl} alt="" className='business-img__img'></img>
+            </div>
+        </div>
+        <div className='business-slider'>
+          <button className='prev disabled'>
+            <span className='icon'>
+              <i className="fa-solid fa-circle-arrow-left" style={{ fontSize: "25px" }}></i>
+            </span>
+          </button>
+          <button className='next'>
+            <span className='icon'>
+              <i className="fa-solid fa-circle-arrow-right" style={{ fontSize: "25px" }}></i>
+            </span>
+          </button>
+          <div className="business-slider__wrp swiper-wrapper">
+            <div className='business-slider__item swiper-slide' data-target={businessId}>
+              <div className='business-slider__card'>
+                <img src={business.imageUrl} alt="" className='business-slider__cover'></img>
+                <div className='business-slider__content'>
+                  <h1 className='business-slider__content'>
+                    {business.title}
+                  </h1>
+                  <span className='business-slider__description'><sup>{business.description}</sup></span>
+                  <div className='business-ctr'>
+                    <div className='business-labels'>
+                    <div class="review-labels__title">Reserved spot for Reviews</div>
+                    <button className='review-slider__fav js-fav'><span className='heart'></span>Reserved spot for Rating</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

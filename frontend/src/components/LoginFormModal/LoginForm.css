@@ -13,7 +13,7 @@ cursor: pointer;
     align-items: flex-end;
 }
 
-button {
+/* button {
     text-align: center;
 	display: inline-block;
 	margin:5px;
@@ -23,4 +23,4 @@ button {
 	border-radius: 7px;
     box-shadow: 0 .2em rgb(105, 120, 138);
     cursor: pointer;
-}
+} */

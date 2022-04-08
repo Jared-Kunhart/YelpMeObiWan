@@ -51,28 +51,11 @@ a:visited {
     background-color: black;
 }
 
-#profileButton {
-    margin-left: 185px;
-    font-family: 'Dosis', sans-serif;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    text-shadow: -1px 1px 2px #000,
-    1px 1px 2px #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
-}
-
 #backgroundFloat {
     background-repeat: no-repeat;
     background-size: cover;
     backface-visibility: visible;
     height: 600px;
-}
-
-#navbar {
-    display: flex;
-    justify-content: center;
 }
 
 #searchSplashArea {
@@ -87,25 +70,49 @@ a:visited {
     justify-content: center;
 }
 
-.toolbar {
+#navbar {
+    display: flex;
+    justify-content: center;
+}
+
+#profileButton {
+    /* margin-left: 300px; */
     font-family: 'Dosis', sans-serif;
-    margin: 15px;
     color: white;
     font-weight: 600;
     font-size: 16px;
-    align-self: center;
-    display: flex;
     text-shadow: -1px 1px 2px #000,
     1px 1px 2px #000,
     1px -1px 0 #000,
     -1px -1px 0 #000;
 }
 
-.homeLink {
+.toolbar {
+    font-family: 'Dosis', sans-serif;
+    width: 33%;
+    margin: 16px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    /* align-self: center; */
+    display: flex;
+    justify-content: space-between;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.homeCreate {
     padding: 20px;
 }
 
-.homeLink:hover {
+.homeLink {
+    display: flex;
+    flex-direction: row;
+}
+
+.homeCreate:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-decoration-style: solid;

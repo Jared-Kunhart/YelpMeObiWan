@@ -53,20 +53,18 @@ const Businesses = ({sessionUser}) => {
           <div id="navbar">
             <div className="toolbar">
               <div className="homeLink">
+                  <div className="homeCreate">
               <Link to="/businesses">Home</Link>
               </div>
               <div className="createLink">
                 <div onClick={openMenu}>
                 Create a Business
-                </div>
+                </div></div>
                 {showMenu && (
                     <div className="create-dropdown">
                         <CreateBusinessPage setShowMenu={setShowMenu} />
                     </div>
                 )}
-              </div>
-              <div className="reviewLink">
-              Write a Review
               </div>
             <div id="profileButton"><ProfileButton user={sessionUser} /></div></div>
             </div>
@@ -80,7 +78,6 @@ const Businesses = ({sessionUser}) => {
             </div>
             <div className="businessCard">
             {businesses?.map(business => (
-                // return (
                 <div className="card" key={business?.id}>
                     <Link to={`/businesses/${business?.id}`}>
                     <div className="cardHover">
@@ -88,13 +85,11 @@ const Businesses = ({sessionUser}) => {
                         <figure><img id="businessImage" src={business?.imageUrl} alt=""></img></figure>
                         </div>
                     </div>
-
                         <div id="businessTitle">{business?.title}</div>
                     </Link>
                     <div id="businessDescription">{business?.description}</div>
                     <div id="businessLocation">Location: {business?.location}</div>
                 </div>
-                // )
             ))}
             </div>
         </nav>

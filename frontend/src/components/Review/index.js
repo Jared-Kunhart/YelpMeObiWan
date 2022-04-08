@@ -5,6 +5,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { Modal } from '../../context/Modal';
 import CreateReviewPage from "./CreateReview";
 import EditReviewPage from './EditReview'
+import './Review.css'
 
 const Reviews = () => {
     const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Reviews = () => {
 
     return (
         <>
-        <div>
+        <div id="reviewtemp">
             {reviews?.filter(review => review.businessId === +businessId).map(review => (
                 <div key={review?.id}>
                     {review?.content}
