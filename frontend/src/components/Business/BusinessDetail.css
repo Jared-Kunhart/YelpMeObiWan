@@ -105,8 +105,21 @@ a:visited {
     padding: 20px;
 }
 
+.homeLink:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: solid;
+}
+
 .createLink {
     padding: 20px;
+    cursor: pointer;
+}
+
+.createLink:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: solid;
 }
 
 .reviewLink {

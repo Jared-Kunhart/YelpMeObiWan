@@ -20,7 +20,7 @@ const getOne = (payload) => {
     }
 }
 
-export const addOneBusiness = (payload) => {
+const addOneBusiness = (payload) => {
     return {
         type: ADD_ONE_BUSINESS,
         payload

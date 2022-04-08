@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import LandingPage from "./components/LandingPage";
-import Businesses from "./components/Business";
 import ProtectedRoute from "./ProtectedRoute";
 import BusinessDetail from "./components/Business/BusinessDetail";
-import CreateBusinessPage from "./components/Business/CreateBusiness";
+import Reviews from "./components/Review";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(sessionActions.restoreUser()); //.then(() => setIsLoaded(true))
   }, [dispatch]);
 
   const Splash = () => {
@@ -34,36 +33,12 @@ function App() {
     <Route path='/businesses/:businessId'>
         <BusinessDetail />
     </Route>
+    <Route path='/reviews/:reviewId'>
+        <Reviews />
+    </Route>
     </Switch>
     </>
   );
 }
 
 export default App;
-
-
-
-
-  // let landingPage;
-  // if (sessionUser) {
-  //   landingPage = (
-  //     <>
-  //       <Redirect to="/businesses" /> : <ProfileButton />
-  //     </>
-  //   )
-  // } else {
-  //   landingPage = (
-  //   <>
-  //     {isLoaded && (
-  //       <Switch>
-  //         <Route exact path="/">
-  //           <LandingPage />
-  //         </Route>
-  //         <Route path="/signup">
-  //           <SignupFormPage />
-  //         </Route>
-  //       </Switch>
-  //     )}
-  //   </>
-  //   )
-  // }

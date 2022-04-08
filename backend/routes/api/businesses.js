@@ -41,18 +41,4 @@ router.delete('/:id(\\d+)', async(req, res) => {
   res.status(204).end()
 })
 
-/*
-
-Fetch test for business
-
-fetch('/api/notebooks', {
-  method: 'GET',
-  headers: {
-    "Content-Type": "application/json",
-    "XSRF-TOKEN": `NXh3J3cu-ngitPbH7CrHWmrEdGkiYwh5xlKo`
-  },
-}).then(res => res.json()).then(data => console.log(data));
-
-*/
-
 module.exports = router;

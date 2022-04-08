@@ -1,9 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteBusiness } from '../../store/business';
-import { Modal } from '../../context/Modal';
-import EditBusiness from './EditBusiness';
 import { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Modal } from '../../context/Modal';
+import { deleteBusiness } from '../../store/business';
+import EditBusiness from './EditBusiness';
+import Reviews from '../Review';
 // import { getOneBusiness } from '../../store/business';
 import './BusinessDetail.css'
 
@@ -26,14 +27,17 @@ const BusinessDetail = () => {
       <p>{business?.location}</p>
       <div className='button-row'>
         <button onClick={() => handleDelete(businessId)} className='delete-button'>
-          Delete
+          Delete Business
         </button>
-        <button onClick={() => setShowModal(true)}>Edit</button>
+        <button onClick={() => setShowModal(true)}>Edit Business</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditBusiness business={business} hideModal={() => setShowModal(false)} />
         </Modal>
       )}
+      <div>
+        <Reviews />
+      </div>
       </div>
     </div>
   );

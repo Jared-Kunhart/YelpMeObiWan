@@ -1,8 +1,7 @@
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllBusinesses } from '../../store/business';
-import BusinessDetail from './BusinessDetail';
 import ProfileButton from '../Navigation/ProfileButton';
 import './BusinessDetail.css'
 import CreateBusinessPage from "./CreateBusiness";
@@ -20,23 +19,17 @@ const Businesses = ({sessionUser}) => {
         setShowMenu(true);
       };
 
-    // let inputTags = document.getElementsByTagName("input")
+    useEffect(() => {
+        if (!showMenu) return;
 
-    // useEffect(() => {
-    //     if (!showMenu) return;
+        const closeMenu = () => {
+          setShowMenu(false);
+        };
+        let sneakyDiv = document.querySelector("#root > main > nav > div.businessCard")
+        sneakyDiv.addEventListener('click', closeMenu)
 
-    //     const closeMenu = () => {
-    //       setShowMenu(false);
-    //     };
-        // if they click input tag don't closemenu
-        // else if they click document close
-
-    //     inputTags.addEventListener('click',
-
-    //     document.addEventListener('click', closeMenu);
-
-    //     return () => document.removeEventListener("click", closeMenu);
-    //   }, [showMenu]);
+        return () => document.removeEventListener("click", closeMenu);
+      }, [showMenu]);
 
     function randomImg() {
     let images = [
@@ -86,8 +79,8 @@ const Businesses = ({sessionUser}) => {
 
             </div>
             <div className="businessCard">
-            {businesses?.map(business => {
-                return (
+            {businesses?.map(business => (
+                // return (
                 <div className="card" key={business?.id}>
                     <Link to={`/businesses/${business?.id}`}>
                     <div className="cardHover">
@@ -101,8 +94,8 @@ const Businesses = ({sessionUser}) => {
                     <div id="businessDescription">{business?.description}</div>
                     <div id="businessLocation">Location: {business?.location}</div>
                 </div>
-                )
-            })}
+                // )
+            ))}
             </div>
         </nav>
     </main>
