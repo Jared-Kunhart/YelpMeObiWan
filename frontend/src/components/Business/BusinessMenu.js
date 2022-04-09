@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import EditBusinessPage from './EditBusiness';
 import DeleteBusinessModal from './BusinessDeleteModal'
-
-import { useDispatch } from 'react-redux';
+import './index.css'
 
 export default function BusinessMenu({ business }) {
     const [showMenu, setShowMenu] = useState(false);
@@ -23,7 +22,7 @@ export default function BusinessMenu({ business }) {
 return (
     <>
     <div className="udBusiness">
-        <button onClick={openMenu}>Edit Business</button>
+        <button className="button" onClick={openMenu}>Edit Business</button>
         {showMenu && (
             <>
             <EditBusinessPage business={business} setShowMenu={setShowMenu} />

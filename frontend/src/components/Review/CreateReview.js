@@ -58,8 +58,8 @@ function CreateReviewPage({ businessId, hideModal  }) {
           onChange={(e) => setRating(e.target.value)}
         />
       </label>
-      <button type="submit" disabled={errors.length > 0}>Post Review</button>
-      <button type="button" onClick={handleCancelClick}>Cancel</button>
+      <button id="create" type="submit" disabled={errors.length > 0}>Post Review</button>
+      <button id="cancel" type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>
   );

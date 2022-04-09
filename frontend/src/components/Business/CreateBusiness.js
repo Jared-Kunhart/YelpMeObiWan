@@ -88,8 +88,8 @@ function CreateBusinessPage({ setShowMenu }) {
           onChange={(e) => setImageUrl(e.target.value)}
         />
       </label>
-      <button type="submit" disabled={errors.length > 0}>Create Business</button>
-      <button type="button" onClick={handleCancelClick}>Cancel</button>
+      <button id="create" type="submit" disabled={errors.length > 0}>Create Business</button>
+      <button id="cancel" type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>
   );

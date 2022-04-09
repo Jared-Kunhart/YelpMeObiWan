@@ -16,6 +16,8 @@
     font-style: normal;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
 #navarea {
     display: flex;
     justify-content: center;
@@ -27,9 +29,4 @@
 .profile-dropdown {
     position: absolute;
     display: inline-grid;
-}
-
-button {
-    font-family: 'Uni Sans', sans-serif;
-    font-weight: 900;
 }

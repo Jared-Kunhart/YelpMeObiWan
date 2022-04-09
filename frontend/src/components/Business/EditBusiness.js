@@ -82,7 +82,7 @@ function EditBusinessPage({ business, setShowMenu }) {
         />
       </label>
       <button type="submit" disabled={errors.length > 0}>Update Business</button>
-      <button type="button" onClick={handleCancelClick}>Cancel</button>
+      <button id="cancel" type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>
   );

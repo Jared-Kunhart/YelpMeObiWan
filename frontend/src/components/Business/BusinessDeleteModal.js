@@ -7,7 +7,7 @@ function DeleteBusinessModal ({ business }) {
 
   return (
     <>
-      <button className="deleteBusiness" onClick={() => setShowModal(true)}>
+      <button id="delete" className="deleteBusiness" onClick={() => setShowModal(true)}>
         Delete Business
       </button>
       {showModal && (

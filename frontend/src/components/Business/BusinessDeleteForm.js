@@ -17,8 +17,8 @@ function DeleteBusinessForm ({ hideModal, business }) {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Are you sure you want to delete {business.title}</h3>
-      <button className="deleteButton" type="submit">Confirm Delete</button>
-      <button className="cancel" onClick={handleCancelClick}>Cancel</button>
+      <button id="delete" className="deleteButton" type="submit">Confirm Delete</button>
+      <button id="cancel" className="cancel" onClick={handleCancelClick}>Cancel</button>
     </form>
   )
 }

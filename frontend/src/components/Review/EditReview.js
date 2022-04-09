@@ -59,7 +59,7 @@ function EditReviewPage({ review, hideModal }) {
         />
       </label>
       <button type="submit" disabled={errors.length > 0}>Update Review</button>
-      <button type="button" onClick={handleCancelClick}>Cancel</button>
+      <button id="cancel" type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>
   );

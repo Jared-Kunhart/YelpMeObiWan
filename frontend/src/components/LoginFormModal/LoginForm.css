@@ -18,33 +18,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700,800');
 
-
-input {
-width: auto;
-color: black;
-padding: 14px 20px;
-margin: 8px 0;
-border-radius: 4px;
-cursor: pointer;
-}
-
 #login {
     font-family: 'Uni Sans';
     font-weight: 900;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-
-button {
-    font-family: 'Uni Sans';
-    text-align: center;
-	display: inline-block;
-	margin:5px;
-    font-weight: bold;
-    border: solid rgb(0, 0, 0) 2px;
-    padding: 5px 10px 10px 10px;
-	border-radius: 7px;
-    box-shadow: 0 .2em rgb(0, 0, 0);
-    cursor: pointer;
 }

@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "./SwiperStyles.css"
+import CreateReviewModal from "./CreateReviewModal";
 
 
 const Reviews = ({business, reviews, sessionUser }) => {
@@ -40,6 +42,20 @@ const Reviews = ({business, reviews, sessionUser }) => {
           }}
           data-swiper-parallax="-23%">
         </div>
+          <SwiperSlide>
+            <CreateReviewModal business={business} />
+            <div className="title" data-swiper-parallax="-300">
+                {business.title}
+            </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+                {business.location}
+            </div>
+            <div className="text" data-swiper-parallax="-100">
+              <p>
+                {business.description}
+              </p>
+            </div>
+          </SwiperSlide>
             {reviews?.filter(review => review.businessId === +business.id).map(review => (
                 <SwiperSlide>
                 <div key={review?.id}>
@@ -47,11 +63,11 @@ const Reviews = ({business, reviews, sessionUser }) => {
                   {review.User.username}
                 </div>
                 <div className="subtitle" data-swiper-parallax="-200">
-                    {review?.rating}
+                  {review?.rating}
                 </div>
                 <div className="text" data-swiper-parallax="-100">
-                    <ReviewMenu review={review} sessionUser={sessionUser} business={business} />
-                    <p>{review?.content}</p>
+                  <ReviewMenu review={review} sessionUser={sessionUser} business={business} />
+                  <p>{review?.content}</p>
                 </div>
                 </div>
                 </SwiperSlide>
