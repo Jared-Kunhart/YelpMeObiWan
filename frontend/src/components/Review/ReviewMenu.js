@@ -1,49 +1,26 @@
-import { useEffect, useState } from 'react';
-import EditReviewPage from './EditReview';
 import DeleteReviewModal from './ReviewDeleteModal';
-import CreateReviewPage from './CreateReview';
+import EditReviewModal from './EditReviewModal';
+import CreateReviewModal from './CreateReviewModal'
 
-export default function ReviewMenu({ review, sessionUser }) {
-    const [showMenu, setShowMenu] = useState(false);
-
-    const openMenu = () => {
-        if (showMenu) return;
-        setShowMenu(true);
-      };
-
-    useEffect(() => {
-        if (!showMenu) return;
-
-        const closeMenu = () => {
-          setShowMenu(false);
-        };
-      }, [showMenu]);
-
-      // const ownsReview = sessionUser && sessionUser.id === review.User.id;
+export default function ReviewMenu({ review, sessionUser, business }) {
 
       const Owner = () => {
         return (
         <div className="review_div">
-        <button onClick={openMenu}>Edit Review</button>
-        {showMenu && (
           <>
-            <EditReviewPage review={review} setShowMenu={setShowMenu} />
+            <EditReviewModal review={review} />
             <DeleteReviewModal review={review}/>
           </>
-        )}
       </div>
-      )
+        )
       }
 
       const NotOwner = () => {
         return (
         <div className="review_div">
-          <button onClick={openMenu}>Post Review</button>
-          {showMenu && (
             <>
-              <CreateReviewPage />
+              <CreateReviewModal />
             </>
-          )}
         </div>
         )
       }

@@ -36,7 +36,7 @@ const Reviews = ({business, reviews, sessionUser }) => {
           className="parallax-bg"
           style={{
             "backgroundImage":
-              "url(/images/themandalorianthechild.jpeg)",
+              "url('/images/themandalorianthechild.jpeg')",
           }}
           data-swiper-parallax="-23%">
         </div>
@@ -50,7 +50,7 @@ const Reviews = ({business, reviews, sessionUser }) => {
                     {review?.rating}
                 </div>
                 <div className="text" data-swiper-parallax="-100">
-                    <ReviewMenu review={review} sessionUser={sessionUser} />
+                    <ReviewMenu review={review} sessionUser={sessionUser} business={business} />
                     <p>{review?.content}</p>
                 </div>
                 </div>

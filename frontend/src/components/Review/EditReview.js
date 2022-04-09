@@ -12,9 +12,9 @@ function EditReviewPage({ review, hideModal }) {
 
   useEffect(() => {
     let errors = [];
-    if (content.length < 1) errors.push("add content")
-    if (content.length > 50) errors.push("too long")
-    if (rating.length < 1) errors.push("needs a rating")
+    if (content.length < 3) errors.push("*DrruurRRP tanaNDuh?*: Did you plug it in?")
+    if (content.length > 75) errors.push("*Beep-bee-bee-boop-bee-doo-weep*: Content too long")
+    if (rating.length < 1) errors.push("*beep boop*: Add some creds")
     setErrors(errors)
   }, [content, rating])
 
@@ -26,22 +26,14 @@ function EditReviewPage({ review, hideModal }) {
         content,
         rating,
     };
-    console.log(payload)
 
     await dispatch(editReview(payload));
-    reset();
     hideModal()
   };
 
   const handleCancelClick = (e) => {
     e.preventDefault()
-    reset()
     hideModal()
-  };
-
-  const reset = () => {
-    setContent("")
-    setRating("")
   };
 
   return (

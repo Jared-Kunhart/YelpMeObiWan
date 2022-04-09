@@ -18,11 +18,6 @@
 
   @import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700,800');
 
-  body {
-    font-family: 'Uni Sans', sans-serif;
-    font-weight: 500;
-  }
-
   * {
     box-sizing: border-box;
   }
@@ -36,17 +31,8 @@
     text-decoration: none;
   }
 
-  .icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-  }
-
   .wrapper {
-    width: 1100px;
+    width: 1150px;
     height: 700px;
     padding: 50px 50px;
     min-height: 750px;
@@ -63,13 +49,12 @@
     width: 100%;
     max-width: 1050px;
     display: flex;
-    align-items: center;
     position: relative;
   }
 
   .bg-shape {
     height: 100%;
-    background-image: linear-gradient(-45deg, #6f6f6f 0%, #272727 25%);
+    background-image: linear-gradient(-45deg, #375f82 0%, #050709 25%);
     box-shadow: 0px 30px 139px 0px rgba(10, 22, 31, 0.26);
     border-radius: 30px;
     padding: 45px 40px;
@@ -82,213 +67,41 @@
   }
 
   .bg-shape img {
-    object-fit: contain;
-    width: 510px;
     display: block;
-    object-position: left center;
-    opacity: .2;
-    /* transform: rotate(-90deg) translateY(-50%); */
-    max-width: inherit;
-    left: 10px;
-    position: absolute;
-  }
-
-  .next, .prev {
-    z-index: 22;
-    display: inline-flex;
-    border: none;
-    width: 61px;
-    height: 61px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    position: absolute;
-    top: 50%;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .next, .prev.disabled {
-    cursor: not-allowed;
-  }
-
-  .next, .prev:focus {
-    outline: none;
-  }
-
-  .prev {
-    left: -30%;
-    transform: translate(-100%, -50%);
-  }
-
-  .next {
-    right: 0;
-    transform: translate(50%, -50%);
-  }
-
-  .business-slider {
-      width: 75%;
-      height: 85%;
-      border-radius: 30px;
-      box-shadow: 0 28px 79px 0 rgba(10, 22, 31, 0.35);
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-    }
-
-  .business-slider__wrp {
-      height: 100%;
-  }
-
-  .business-slider__item {
-      position: relative;
-      height: 100%;
-      width: 100%;
-  }
-
-  .fa-solid fa-circle-arrow-right:active {
-    animation: progress 1s ease-out forwards;
-    animation-delay: .5s;
-    opacity: 0.75;
-  }
-
-  .business-slider__card {
     height: 100%;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    transition: all .5s;
-    overflow: hidden;
-    position: relative;
-    border-radius: 30px;
+    object-position: right;
+    opacity: .3;
+    right: 10px;
+    position: absolute;
   }
 
-  .business-slider__cover {
+  .business_cover {
     border-radius: 30px;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: 25px;
+    top: 25px;
+    width: 80%;
+    height: 80%;
     display: block;
     object-fit: cover;
   }
 
-  .business-slider__content {
-    color: #fff;
-    padding-top: 1px;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding-left: 250px;
-    padding-right: 80px;
-  }
-
-  /* .review-labels__title {
-    margin: 0;
-    margin-bottom: 10px;
-    font-weight: 900;
-    font-size: 41px;
-    line-height: 1.2em;
-    letter-spacing: 2px;
-    opacity: 0;
-    transform: translateY(55px);
-    transition: all .5s;
-  }
-
-  .business-slider__description {
-    display: block;
-    font-size: 42px;
-    opacity: 0;
-    transform: translateY(55px);
-    transition: all .5s;
-  } */
-
-  sup {
-    top: -20px;
-    font-size: 65%;
-  }
-
-  .review-slider__fav js-fav {
-    color: #888e94;
-    background: none;
-    border: none;
-    position: relative;
-    padding-left: 25px;
-    outline: none;
-    cursor: pointer;
-  }
-
-  review-slider__fav js-fav:focus {
-    outline: none;
-  }
-
-  .heart {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    pointer-events: none;
-    width: 100px;
-    height: 100px;
-    background: url("../../../public/images/heart.png") no-repeat;
-    background-position: 0 0;
-    cursor: pointer;
-  }
-
-  .hr-vertical {
-    width: 1px;
-    background: #9fa3a7;
-    align-self: stretch;
-    margin: 0 35px;
-    flex-shrink: 0;
-    opacity: .5;
-}
-
-  .business-slider__item {
-    margin: 5px;
-    cursor: pointer;
-  }
-
-  business-slider__item:first-child {
-    margin-left: 0;
-  }
-
-  .review-labels__title {
-    font-family: 'Dosis', sans-serif;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 18px;
-  }
-
-  .-img {
-    position: absolute;
-    z-index: 2;
-    width: 500px;
-    left: 25%;
-    transform: translateX(-45%);
-    max-height: 500px;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  .__item {
+  .business-title {
     display: flex;
-    align-items: center;
+    color: rgb(255, 255, 255);
+    padding-top: 1px;
     position: absolute;
-    pointer-events: none;
-    user-select: none;
-    top: 50%;
-    right: 0;
-    opacity: 0;
+    z-index: 2;
   }
 
-  .__item.active {
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
-    transition-delay: .3s;
+  .business-description {
+    background-color: rgb(129, 134, 58);
+    color: white;
+    z-index: -4;
+  }
+
+  .review_wrapper {
+    background-color: hotpink;
   }
 
   img {

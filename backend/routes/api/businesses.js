@@ -8,7 +8,9 @@ const router = express.Router();
 const { Business } = db;
 
 router.get('/', asyncHandler(async(req, res) => {
-    const businesses = await Business.findAll()
+    const businesses = await Business.findAll({
+      include: db.Review,
+    })
     return res.json({businesses})
 }))
 

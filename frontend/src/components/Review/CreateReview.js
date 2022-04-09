@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createReview } from "../../store/review";
 
 
-function CreateReviewPage({ businessId, setShowMenu  }) {
+function CreateReviewPage({ businessId, hideModal  }) {
   const dispatch = useDispatch();
   const reviews = useSelector(state => Object.values(state.review))
   const [content, setContent] = useState("");
@@ -28,19 +28,12 @@ function CreateReviewPage({ businessId, setShowMenu  }) {
     };
 
     await dispatch(createReview(review));
-    setShowMenu(false)
-    reset();
+    hideModal()
   };
 
   const handleCancelClick = (e) => {
     e.preventDefault()
-    setShowMenu(false)
-    reset()
-  };
-
-  const reset = () => {
-    setContent("")
-    setRating("")
+    hideModal()
   };
 
   return (
