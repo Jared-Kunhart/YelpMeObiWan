@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createReview } from "../../store/review";
 
 
-function CreateReviewPage({ businessId }) {
+function CreateReviewPage({ businessId, setShowMenu  }) {
   const dispatch = useDispatch();
   const reviews = useSelector(state => Object.values(state.review))
   const [content, setContent] = useState("");
@@ -12,9 +12,9 @@ function CreateReviewPage({ businessId }) {
 
   useEffect(() => {
     let errors = [];
-    if (content.length < 1) errors.push("add content")
-    if (content.length > 50) errors.push("too long")
-    if (rating.length < 1) errors.push("needs a rating")
+    if (content.length < 3) errors.push("*DrruurRRP tanaNDuh?*: Did you plug it in?")
+    if (content.length > 75) errors.push("*Beep-bee-bee-boop-bee-doo-weep*: Content too long")
+    if (rating.length < 1) errors.push("*beep boop*: Add some creds")
     setErrors(errors)
   }, [content, rating])
 
@@ -28,11 +28,13 @@ function CreateReviewPage({ businessId }) {
     };
 
     await dispatch(createReview(review));
+    setShowMenu(false)
     reset();
   };
 
   const handleCancelClick = (e) => {
     e.preventDefault()
+    setShowMenu(false)
     reset()
   };
 

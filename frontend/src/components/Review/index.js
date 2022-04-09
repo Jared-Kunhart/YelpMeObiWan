@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
+import { Parallax, Pagination, Navigation } from "swiper";
 import { getAllReviews, deleteReview, editReview } from "../../store/review";
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from "react-router-dom";
-import { Modal } from '../../context/Modal';
+import { useDispatch } from 'react-redux';
+import { Swiper, SwiperSlide } from "swiper/react";
 import CreateReviewPage from "./CreateReview";
-import EditReviewPage from './EditReview'
-import './Review.css'
+import EditReviewPage from './EditReview';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-const Reviews = () => {
+
+const Reviews = ({business, reviews, sessionUser }) => {
     const dispatch = useDispatch();
-    const { businessId } = useParams()
-    const [showModal, setShowModal] = useState(false);
-    const reviews = useSelector(state => Object.values(state.review))
+
+
     useEffect(() => {
         dispatch(getAllReviews())
     }, [dispatch])
@@ -22,25 +24,46 @@ const Reviews = () => {
 
     return (
         <>
-        <div id="reviewtemp">
-            {reviews?.filter(review => review.businessId === +businessId).map(review => (
+        <Swiper
+            style={{
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+            }}
+            speed={600}
+            parallax={true}
+            pagination={{
+            clickable: true,
+            }}
+            navigation={true}
+            modules={[Parallax, Pagination, Navigation]}
+            className="mySwiper">
+        <div
+          slot="container-start"
+          className="parallax-bg"
+          style={{
+            "backgroundImage":
+              "url(/images/themandalorianthechild.jpeg)",
+          }}
+          data-swiper-parallax="-23%">
+        </div>
+            {reviews?.filter(review => review.businessId === +business.id).map(review => (
+                <SwiperSlide>
                 <div key={review?.id}>
-                    {review?.content}
-                <button onClick={() => setShowModal(true)}>Edit</button>
-                {showModal && (
-                  <Modal onClose={() => setShowModal(false)}>
-                    <EditReviewPage review={review} hideModal={() => setShowModal(false)} />
-                  </Modal>
-                )}
-                <button onClick={() => handleDelete(review?.id)} className='delete-button'>
-                Delete
-                </button>
+                <div className="title" data-swiper-parallax="-300">
+                  {review.User.username}
                 </div>
+                <div className="subtitle" data-swiper-parallax="-200">
+                    {review?.rating}
+                </div>
+                <div className="text" data-swiper-parallax="-100">
+                    <p>{review?.content}</p>
+                </div>
+                </div>
+                </SwiperSlide>
             ))}
-        </div>
         <div>
-            <CreateReviewPage businessId={businessId} />
         </div>
+        </Swiper>
         </>
     )
 }

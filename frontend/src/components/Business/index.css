@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'Uni Sans';
+    src: url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168547/unisans-font/UniSansHeavyCAPS.woff2') format('woff2'),
+    url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168547/unisans-font/UniSansHeavyCAPS.woff') format('woff'),
+    url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168548/unisans-font/UniSansHeavyCAPS.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Uni Sans';
+    src: url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168545/unisans-font/UniSansThinCAPS.woff2') format('woff2'),
+    url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168545/unisans-font/UniSansThinCAPS.woff') format('woff'),
+    url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168548/unisans-font/UniSansThinCAPS.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700,800');
+
+a {
+    text-decoration: none;
+}
+
+/* label {
+    padding: 10px;
+}
+
+input {
+    width: 10%;
+} */
+
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+#imageUrl {
+    height: 500px;
+    width: 600px;
+}
+
+.business-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileWrapper {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+#backgroundFloat {
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: visible;
+    height: 600px;
+}
+
+#searchSplashArea {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    flex-direction: column;
+}
+
+.yelpImage {
+    display: flex;
+    justify-content: center;
+}
+
+#navbar {
+    display: flex;
+    justify-content: center;
+}
+
+#profileButton {
+    /* margin-left: 300px; */
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.toolbar {
+    font-family: 'Dosis', sans-serif;
+    width: 33%;
+    margin: 16px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    /* align-self: center; */
+    display: flex;
+    justify-content: space-between;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.homeCreate {
+    padding: 20px;
+}
+
+.homeLink {
+    display: flex;
+    flex-direction: row;
+}
+
+.homeCreate:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: solid;
+}
+
+.createLink {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.createLink:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: solid;
+}
+
+.reviewLink {
+    padding: 20px;
+}
+
+#searchBar {
+    display: flex;
+    justify-content: center;
+}
+
+.mainSearch {
+    width: 30%;
+    font-family: 'Dosis', sans-serif;
+}
+
+.businessCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#businessImage {
+    width: 100%;
+    height: fit-content;
+}
+
+#businessTitle {
+    font-family: 'Uni Sans', sans-serif;
+    font-weight: 900;
+    color: black;
+}
+
+#businessDescription {
+    font-family: 'Dosis', sans-serif;
+    padding: 5px;
+}
+
+#businessLocation {
+    font-family: 'Dosis', sans-serif;
+    padding: 5px;
+    font-weight: 600;
+}
+
+.createLink {
+    display: flex;
+    justify-content: center;
+}
+
+.create-dropdown {
+    position: absolute;
+    display: inline-grid;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: rgba(186, 186, 186, 0.404);
+    padding: 1px;
+    margin: 1px;
+    font-family: 'Dosis', sans-serif;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+    top: 75px;
+    left: 375px;
+    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .7);
+}
+
+.card {
+    width: 100%;
+    max-width: 40em;
+    height: 100%;
+    background: #fff;
+    margin: 2.5em auto;
+    padding: 1em;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+
+#businessTitle{
+    cursor:alias;
+}
+
+.cardHover figure {
+	position: relative;
+    cursor:alias;
+}
+
+.cardHover figure::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+.cardHover figure:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}

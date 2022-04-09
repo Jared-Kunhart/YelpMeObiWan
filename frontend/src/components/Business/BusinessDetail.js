@@ -1,24 +1,51 @@
-import { useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { Modal } from '../../context/Modal';
-import { deleteBusiness } from '../../store/business';
-import EditBusiness from './EditBusiness';
+import { useEffect, useState } from 'react';
 import Reviews from '../Review';
-// import { getOneBusiness } from '../../store/business';
-import './ReviewSlider.css'
+import './BusinessDetail.css'
+import CreateReviewPage from '../Review/CreateReview';
+import EditReviewPage from '../Review/EditReview';
 
-const BusinessDetail = () => {
-  const history = useHistory()
-  const { businessId } = useParams()
-  const business = useSelector(state => state.business[businessId]);
-  const [showModal, setShowModal] = useState(false);
-  const dispatch = useDispatch();
+const BusinessDetail = ({ business, sessionUser, reviews }) => {
+  console.log(sessionUser)
+  console.log(reviews)
+  const [showMenu, setShowMenu] = useState(false);
 
-  const handleDelete = (businessId) => {
-    dispatch(deleteBusiness(businessId));
-    history.push('/')
+  const openMenu = () => {
+    if (showMenu) return;
+    setShowMenu(true);
   };
+
+useEffect(() => {
+    if (!showMenu) return;
+
+    const closeMenu = () => {
+      setShowMenu(false);
+    };
+    let sneakyDiv = document.querySelector("#root > main > nav > div.businessCard")
+    sneakyDiv.addEventListener('click', closeMenu)
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
+
+
+  const reviewButton = () => {
+    const reviewBelongsToUser = reviews.find(review => sessionUser.id === review.userId)
+    if (reviewBelongsToUser) {
+      <button onClick={openMenu}>Edit a Review</button>
+      {showMenu && (
+      <div className="editReview">
+        <EditReviewPage setShowMenu={setShowMenu} />
+      </div>
+      )}
+    } else {
+      <button onClick={openMenu}>Post Review</button>
+      {showMenu && (
+      <div className="postReview">
+        <CreateReviewPage setShowMenu={setShowMenu} />
+      </div>
+      )}
+    }
+  }
+
 
   return (
     <div className='wrapper'>
@@ -28,34 +55,25 @@ const BusinessDetail = () => {
         </div>
 
         <div className='business-img'>
-            <div className='business-img__item' id={businessId}>
+            <div className='business-img__item' id={business.id}>
               <img src={business.imageUrl} alt="" className='business-img__img'></img>
             </div>
         </div>
+
         <div className='business-slider'>
-          <button className='prev disabled'>
-            <span className='icon'>
-              <i className="fa-solid fa-circle-arrow-left" style={{ fontSize: "25px" }}></i>
-            </span>
-          </button>
-          <button className='next'>
-            <span className='icon'>
-              <i className="fa-solid fa-circle-arrow-right" style={{ fontSize: "25px" }}></i>
-            </span>
-          </button>
           <div className="business-slider__wrp swiper-wrapper">
-            <div className='business-slider__item swiper-slide' data-target={businessId}>
+            <div className='business-slider__item swiper-slide' data-target={business.id}>
               <div className='business-slider__card'>
                 <img src={business.imageUrl} alt="" className='business-slider__cover'></img>
                 <div className='business-slider__content'>
                   <h1 className='business-slider__content'>
                     {business.title}
                   </h1>
+                  <button>Review</button>
                   <span className='business-slider__description'><sup>{business.description}</sup></span>
                   <div className='business-ctr'>
                     <div className='business-labels'>
-                    <div class="review-labels__title">Reserved spot for Reviews</div>
-                    <button className='review-slider__fav js-fav'><span className='heart'></span>Reserved spot for Rating</button>
+                    <div className="review-labels__title"><Reviews business={business} reviews={reviews} sessionUser={sessionUser} /></div>
 
                     </div>
                   </div>

@@ -3,13 +3,23 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllBusinesses } from '../../store/business';
 import ProfileButton from '../Navigation/ProfileButton';
-import './BusinessDetail.css'
 import CreateBusinessPage from "./CreateBusiness";
+import BusinessModal from "./BusinessModal";
+import { getAllReviews } from "../../store/review";
+import BusinessMenu from "./BusinessMenu";
+import './index.css'
+
 
 const Businesses = ({sessionUser}) => {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const businesses = useSelector(state => Object.values(state.business))
+    const reviews = useSelector(state => Object.values(state.review))
+
+    useEffect(() => {
+        dispatch(getAllReviews())
+    }, [dispatch])
+
     useEffect(() => {
         dispatch(getAllBusinesses())
     }, [dispatch])
@@ -25,10 +35,10 @@ const Businesses = ({sessionUser}) => {
         const closeMenu = () => {
           setShowMenu(false);
         };
-        let sneakyDiv = document.querySelector("#root > main > nav > div.businessCard")
-        sneakyDiv.addEventListener('click', closeMenu)
+        // let sneakyDiv = document.querySelector("#root > main > nav > div.businessCard")
+        // sneakyDiv.addEventListener('click', closeMenu)
 
-        return () => document.removeEventListener("click", closeMenu);
+        // return () => document.removeEventListener("click", closeMenu);
       }, [showMenu]);
 
     function randomImg() {
@@ -74,21 +84,25 @@ const Businesses = ({sessionUser}) => {
                     <input className="mainSearch" placeholder="Find Cantina's, Droid Repair, Spaceports..."></input>
                     </div>
                 </div>
-
             </div>
             <div className="businessCard">
             {businesses?.map(business => (
                 <div className="card" key={business?.id}>
-                    <Link to={`/businesses/${business?.id}`}>
                     <div className="cardHover">
                         <div>
-                        <figure><img id="businessImage" src={business?.imageUrl} alt=""></img></figure>
+                        <figure><BusinessModal business={business} reviews={reviews} sessionUser={sessionUser} /></figure>
                         </div>
-                    </div>
                         <div id="businessTitle">{business?.title}</div>
-                    </Link>
+                    </div>
                     <div id="businessDescription">{business?.description}</div>
                     <div id="businessLocation">Location: {business?.location}</div>
+                    <div id="editBusinessButton">
+                    {sessionUser && sessionUser.id === business.ownerId && (
+                        <>
+                        <BusinessMenu business={business} />
+                        </>
+                    )}
+                    </div>
                 </div>
             ))}
             </div>

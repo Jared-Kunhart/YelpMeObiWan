@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { Redirect } from "react-router-dom";
 import { editBusiness } from "../../store/business";
-// import './SignupForm.css'
+import './index.css'
 
-function EditBusinessPage({ business, hideModal }) {
+function EditBusinessPage({ business, setShowMenu }) {
   const dispatch = useDispatch();
   const [title, setTitle] = useState(business.title);
   const [description, setDescription] = useState(business.description);
@@ -36,12 +35,12 @@ function EditBusinessPage({ business, hideModal }) {
     };
 
     await dispatch(editBusiness(payload));
-    hideModal()
+    setShowMenu(false);
   };
 
   const handleCancelClick = (e) => {
     e.preventDefault()
-    hideModal()
+    setShowMenu(false);
   };
 
   return (
@@ -82,7 +81,7 @@ function EditBusinessPage({ business, hideModal }) {
           onChange={(e) => setImageUrl(e.target.value)}
         />
       </label>
-      <button type="submit" disabled={errors.length > 0}>Edit Business</button>
+      <button type="submit" disabled={errors.length > 0}>Update Business</button>
       <button type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>
