@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-import { deleteBusiness } from '../../store/business'
+import { deleteReview } from "../../store/review";
 
-function DeleteBusinessForm ({ hideModal, business }) {
+function DeleteReviewForm ({ hideModal, review }) {
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      dispatch(deleteBusiness(business.id))
+      dispatch(deleteReview(review.id))
       hideModal();
   }
   const handleCancelClick = (e) => {
@@ -16,11 +16,11 @@ function DeleteBusinessForm ({ hideModal, business }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3>Are you sure you want to delete {business.title}</h3>
+      <h3>Delete this Review ?</h3>
       <button className="deleteButton" type="submit">Confirm Delete</button>
       <button className="cancel" onClick={handleCancelClick}>Cancel</button>
     </form>
   )
 }
 
-export default DeleteBusinessForm;
+export default DeleteReviewForm;

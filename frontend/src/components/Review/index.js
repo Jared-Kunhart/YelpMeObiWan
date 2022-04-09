@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Parallax, Pagination, Navigation } from "swiper";
-import { getAllReviews, deleteReview, editReview } from "../../store/review";
+import { getAllReviews} from "../../store/review";
+import ReviewMenu from "./ReviewMenu";
 import { useDispatch } from 'react-redux';
 import { Swiper, SwiperSlide } from "swiper/react";
-import CreateReviewPage from "./CreateReview";
-import EditReviewPage from './EditReview';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -13,14 +12,9 @@ import "swiper/css/navigation";
 const Reviews = ({business, reviews, sessionUser }) => {
     const dispatch = useDispatch();
 
-
     useEffect(() => {
         dispatch(getAllReviews())
     }, [dispatch])
-
-    const handleDelete = (reviewId) => {
-        dispatch(deleteReview(reviewId));
-    };
 
     return (
         <>
@@ -56,13 +50,12 @@ const Reviews = ({business, reviews, sessionUser }) => {
                     {review?.rating}
                 </div>
                 <div className="text" data-swiper-parallax="-100">
+                    <ReviewMenu review={review} sessionUser={sessionUser} />
                     <p>{review?.content}</p>
                 </div>
                 </div>
                 </SwiperSlide>
             ))}
-        <div>
-        </div>
         </Swiper>
         </>
     )

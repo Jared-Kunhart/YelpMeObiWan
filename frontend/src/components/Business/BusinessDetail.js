@@ -69,12 +69,10 @@ useEffect(() => {
                   <h1 className='business-slider__content'>
                     {business.title}
                   </h1>
-                  <button>Review</button>
                   <span className='business-slider__description'><sup>{business.description}</sup></span>
                   <div className='business-ctr'>
                     <div className='business-labels'>
                     <div className="review-labels__title"><Reviews business={business} reviews={reviews} sessionUser={sessionUser} /></div>
-
                     </div>
                   </div>
                 </div>

@@ -66,7 +66,7 @@ function EditReviewPage({ review, hideModal }) {
           onChange={(e) => setRating(e.target.value)}
         />
       </label>
-      <button type="submit" disabled={errors.length > 0}>Edit Review</button>
+      <button type="submit" disabled={errors.length > 0}>Update Review</button>
       <button type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>
