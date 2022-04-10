@@ -30,12 +30,21 @@ function App() {
       {sessionUser ? <Redirect to="/businesses" /> : <Splash />}
     </Route>
     <ProtectedRoute exact path="/businesses" sessionUser={sessionUser} />
+    {sessionUser ?
+    <>
+    <Switch>
     <Route path='/businesses/:businessId'>
         <BusinessDetail />
     </Route>
     <Route path='/reviews/:reviewId'>
         <Reviews />
     </Route>
+    <Route>
+      <h2>404 error</h2>
+    </Route>
+    </Switch>
+    </>
+    : <Redirect to="/" />}
     </Switch>
     </>
   );

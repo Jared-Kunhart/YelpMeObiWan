@@ -13,9 +13,9 @@ function CreateReviewPage({ hideModal, business }) {
 
   useEffect(() => {
     let errors = [];
-    if (content.length < 3) errors.push("*DrruurRRP tanaNDuh?*: Did you plug it in?")
+    if (content.length < 3) errors.push("*DrruurRRP tanaNDuh?*: Did you plug it in? (Add a review)")
     if (content.length > 75) errors.push("*Beep-bee-bee-boop-bee-doo-weep*: Content too long")
-    if (rating.length < 1) errors.push("*beep boop*: Add some creds")
+    if (rating.length < 1) errors.push("*beep boop*: Add some creds (Add a rating)")
     setErrors(errors)
   }, [content, rating])
 

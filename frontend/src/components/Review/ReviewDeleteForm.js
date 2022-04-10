@@ -15,10 +15,12 @@ function DeleteReviewForm ({ hideModal, review }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="delete_review_form" onSubmit={handleSubmit}>
       <h3>Delete this Review ?</h3>
+      <div id="delete_review_div">
       <button id="delete" className="deleteButton" type="submit">Confirm Delete</button>
-      <button id="cancel" className="cancel" onClick={handleCancelClick}>Cancel</button>
+      <button id="cancel" className="cancel_review_button" onClick={handleCancelClick}>Cancel</button>
+      </div>
     </form>
   )
 }

@@ -15,10 +15,12 @@ function DeleteBusinessForm ({ hideModal, business }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Are you sure you want to delete {business.title}</h3>
+    <form id="delete_business_form" onSubmit={handleSubmit}>
+      <h3>Are you sure you want to delete <p id="delete_business_title">{business.title} ?</p></h3>
+      <div id="delete_business_buttons">
       <button id="delete" className="deleteButton" type="submit">Confirm Delete</button>
-      <button id="cancel" className="cancel" onClick={handleCancelClick}>Cancel</button>
+      <button id="cancel" className="cancelDelete" onClick={handleCancelClick}>Cancel</button>
+      </div>
     </form>
   )
 }

@@ -10,7 +10,6 @@ router.get('/', asyncHandler(async(req, res) => {
     const reviews = await Review.findAll({
         include: db.User,
     })
-    console.log(reviews)
     return res.json({reviews})
 }))
 
@@ -41,7 +40,6 @@ router.put('/:id(\\d+)', requireAuth, asyncHandler(async(req, res) => {
         },
         include: db.User
     })
-    console.log(review)
     res.json({ review })
 }))
 

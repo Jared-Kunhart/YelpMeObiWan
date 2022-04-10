@@ -326,6 +326,51 @@ button {
     font-family: 'Dosis', sans-serif;
 }
 
+#delete_business_form {
+    font-family: 'Uni Sans', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:flex-start;
+    height: 60%;
+    width: 350px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: -5px -5px 30px 5px rgba(74, 66, 66, 0.543), 5px 5px 30px 5px rgba(49, 49, 52, 0.577);    background-color: rgba(0, 0, 0, 0.999);
+    color: white;
+}
+
+#cancel.cancelDelete {
+    width: 110px;
+}
+
+#delete_review_form {
+    font-family: 'Uni Sans', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:flex-start;
+    height: 60%;
+    width: 350px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: -5px -5px 30px 5px rgba(74, 66, 66, 0.543), 5px 5px 30px 5px rgba(49, 49, 52, 0.577);    background-color: rgba(0, 0, 0, 0.999);
+    color: white;
+}
+
+#cancel.cancel_review_button {
+    width: 110px;
+    margin: 6px;
+    box-shadow: 0 .2em .2em rgba(185, 180, 170, 0.655), 0 0 1px rgb(255, 255, 190), 0 0 1px rgb(95, 95, 5);
+}
+
+#delete_business_title {
+    display: inline;
+    text-decoration: underline;
+}
+
 input {
     width: auto;
     color: black;
