@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { editReview } from "../../store/review";
+import '../../index.css'
 
 
 function EditReviewPage({ review, hideModal }) {
@@ -37,7 +38,7 @@ function EditReviewPage({ review, hideModal }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="edit_form_review" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
@@ -58,7 +59,7 @@ function EditReviewPage({ review, hideModal }) {
           onChange={(e) => setRating(e.target.value)}
         />
       </label>
-      <button type="submit" disabled={errors.length > 0}>Update Review</button>
+      <button id="review_button" type="submit" disabled={errors.length > 0}>Update Review</button>
       <button id="cancel" type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>

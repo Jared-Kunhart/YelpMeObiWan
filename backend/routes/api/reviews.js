@@ -10,22 +10,38 @@ router.get('/', asyncHandler(async(req, res) => {
     const reviews = await Review.findAll({
         include: db.User,
     })
+    console.log(reviews)
     return res.json({reviews})
 }))
 
 router.post('/', requireAuth, asyncHandler(async(req, res) => {
     const { content, rating, businessId } = req.body
+
     const userId = req.user.id
-    const review = await Review.create({ content, rating, userId, businessId })
+    const newReview = await Review.create({ content, rating, userId, businessId })
+    const review = await Review.findOne({
+        where: {
+            id: newReview.id,
+        },
+        include: db.User
+    })
     return res.json({ review })
 }))
 
-router.put('/:id(\\d+)', asyncHandler(async(req, res) => {
-    const review = await Review.findByPk(req.params.id);
-    review.content = req.body.content || review.content
-    review.rating = req.body.rating || review.rating
-    review.businessId = req.body.businessId || review.businessId
-    await review.save()
+router.put('/:id(\\d+)', requireAuth, asyncHandler(async(req, res) => {
+    const newReview = await Review.findByPk(req.params.id);
+    const userId = req.user.id
+    newReview.content = req.body.content || newReview.content
+    newReview.rating = req.body.rating || newReview.rating
+    newReview.businessId = req.body.businessId || newReview.businessId
+    await newReview.save()
+    const review = await Review.findOne({
+        where: {
+            id: newReview.id,
+        },
+        include: db.User
+    })
+    console.log(review)
     res.json({ review })
 }))
 

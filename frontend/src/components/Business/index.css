@@ -186,16 +186,16 @@ a:visited {
     letter-spacing: .05em;
     font-weight: 700;
 	line-height: 1.2;
-    background-color: rgba(186, 186, 186, 0.404);
+    background-color: rgba(100, 98, 107, 0.968);
     padding: 1px;
     margin: 1px;
     font-family: 'Dosis', sans-serif;
-    text-shadow: -1px 1px 2px #000,
+    text-shadow: -1px 2px 2px #000,
     1px 1px 2px #000,
     1px -1px 0 #000,
     -1px -1px 0 #000;
     top: calc(8%);
-    left: calc(18%);
+    left: calc(36%);
     box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .7);
 }
 
@@ -264,6 +264,11 @@ figure:hover+span {
 	}
 }
 
+label,input{
+    display:flex;
+    flex-direction:column;
+  }
+
 button {
     font-family: 'Uni Sans', sans-serif;
     text-transform: uppercase;
@@ -274,7 +279,7 @@ button {
 	margin:5px;
     color: rgb(255, 255, 255);
     background-color: rgb(41, 37, 37);
-    border: solid rgb(7, 12, 100) 2px;
+    /* border: solid rgb(7, 12, 100) 2px; */
     padding: 5px 6px 5px 7px;
 	border-radius: 5px;
     box-shadow: 0 .2em .2em rgb(53, 3, 135);
@@ -289,8 +294,36 @@ button {
     box-shadow: 0 .2em .2em rgb(0, 0, 232);
 }
 
+#review_button {
+    background-color: rgba(82, 66, 3, 0.815);
+    box-shadow: 0 .2em .2em rgba(185, 180, 170, 0.655), 0 0 10px rgb(255, 255, 190), 0 0 40px rgb(95, 95, 5);
+}
+
 #cancel {
     box-shadow: 0 .4em .4em rgb(8, 8, 8);
+}
+
+#reviewForm{
+    width: 100%;
+}
+
+#edit_form_review {
+    font-family: 'Uni Sans', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 60%;
+    width: 650px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: -5px -5px 30px 5px rgba(74, 66, 66, 0.543), 5px 5px 30px 5px rgba(49, 49, 52, 0.577);    background-color: rgba(0, 0, 0, 0.923);
+    color: white;
+}
+
+#edit_form_review label {
+    font-family: 'Dosis', sans-serif;
 }
 
 input {

@@ -44,7 +44,7 @@ function EditBusinessPage({ business, setShowMenu }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="edit_business_form" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>

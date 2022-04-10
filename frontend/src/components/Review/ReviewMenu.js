@@ -3,10 +3,6 @@ import EditReviewModal from './EditReviewModal';
 import CreateReviewModal from './CreateReviewModal'
 
 export default function ReviewMenu({ review, sessionUser, business }) {
-      console.log(review)
-      console.log(business)
-
-
       const Owner = () => {
         return (
         <div className="review_div">
@@ -22,7 +18,7 @@ export default function ReviewMenu({ review, sessionUser, business }) {
         return (
         <div className="review_div">
             <>
-              <CreateReviewModal />
+              <CreateReviewModal business={business} />
             </>
         </div>
         )

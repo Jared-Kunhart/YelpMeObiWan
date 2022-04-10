@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { createReview } from "../../store/review";
 
 
-function CreateReviewPage({ businessId, hideModal  }) {
+function CreateReviewPage({ hideModal, business }) {
   const dispatch = useDispatch();
   const reviews = useSelector(state => Object.values(state.review))
+  const businessId = business.id
   const [content, setContent] = useState("");
   const [rating, setRating] = useState("");
   const [errors, setErrors] = useState([]);
@@ -37,7 +38,7 @@ function CreateReviewPage({ businessId, hideModal  }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="edit_form_review" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
@@ -58,7 +59,7 @@ function CreateReviewPage({ businessId, hideModal  }) {
           onChange={(e) => setRating(e.target.value)}
         />
       </label>
-      <button id="create" type="submit" disabled={errors.length > 0}>Post Review</button>
+      <button id="review_button" type="submit" disabled={errors.length > 0}>Post Review</button>
       <button id="cancel" type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>

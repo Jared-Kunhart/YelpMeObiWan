@@ -29,13 +29,13 @@ function SignupFormPage() {
   };
 
   return (
-    <form className="submitForm" onSubmit={handleSubmit}>
+    <form id="sign_up_form" className="submitForm" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
     <div id="signup">
       <label>
-        HoloMail:
+        HoloMail (email):
         <input
           type="text"
           value={email}
@@ -44,7 +44,7 @@ function SignupFormPage() {
         />
       </label>
       <label>
-        Handle:
+        Handle (username):
         <input
           type="text"
           value={username}

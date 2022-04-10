@@ -28,7 +28,7 @@ html {
 
 .splashWrapper {
     display: flex;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     flex-direction: column;
     justify-content: center;
     align-items: center;

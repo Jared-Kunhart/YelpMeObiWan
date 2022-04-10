@@ -1,5 +1,17 @@
-.submitForm {
-    width: 300px;
-    height: 400px;
-    background-color: yellow;
+#sign_up_form {
+    background-image: url("../../../public/images/yelpme.png");
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: top;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 50%;
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: -5px -5px 30px 5px rgba(74, 66, 66, 0.543), 5px 5px 30px 5px rgba(49, 49, 52, 0.577);    background-color: rgba(0, 0, 0, 0.923);
+    color: white;
 }
