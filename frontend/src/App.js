@@ -6,6 +6,7 @@ import LandingPage from "./components/LandingPage";
 import ProtectedRoute from "./ProtectedRoute";
 import BusinessDetail from "./components/Business/BusinessDetail";
 import Reviews from "./components/Review";
+import './App.css'
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -25,6 +26,13 @@ function App() {
 
   return (
     <>
+    <div id='dev-box'>
+      <div id="card">
+        <a id="dev-link" target="_blank" href='https://github.com/Jared-Kunhart'><img src='/images/github-512.png'></img></a>
+        <a id="dev-link" target="_blank" href='https://www.linkedin.com/in/jared-kunhart-307661236'><img src='/images/linkedin.png'></img></a>
+      </div>
+    <div id="holo"></div>
+    </div>
     <Switch>
     <Route exact path="/">
       {sessionUser ? <Redirect to="/businesses" /> : <Splash />}
