@@ -16,7 +16,7 @@ export default function ReviewMenu({ review, sessionUser, business }) {
 
       const NotOwner = () => {
         return (
-        <div className="review_div">
+        <div id='post_review_div' className="review_div">
             <>
               <CreateReviewModal business={business} />
             </>

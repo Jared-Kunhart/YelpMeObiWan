@@ -345,6 +345,17 @@ button {
     width: 110px;
 }
 
+#review_rating {
+    font-size: 16px;
+    font-style: oblique;
+}
+
+#post_review_div {
+    position: absolute;
+    right: -98%;
+    top: 225px;
+}
+
 #delete_review_form {
     font-family: 'Uni Sans', sans-serif;
     position: relative;

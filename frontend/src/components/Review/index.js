@@ -67,8 +67,8 @@ const Reviews = ({business, sessionUser }) => {
                 <div className="title" data-swiper-parallax="-300">
                   {review?.User?.username}
                 </div>
-                <div className="subtitle" data-swiper-parallax="-200">
-                  {review?.rating}
+                <div id="review_rating" className="subtitle" data-swiper-parallax="-200">
+                  {review?.rating} out of 10 Beskar Ingots
                 </div>
                 <div className="text" data-swiper-parallax="-100">
                   <ReviewMenu review={review} sessionUser={sessionUser} business={business} />

@@ -8,7 +8,7 @@ function CreateReviewModal ({ business }) {
   return (
     <>
       <button id="review_button" className="postReview" onClick={() => setShowModal(true)}>
-        Post Review
+        Post a Review
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
