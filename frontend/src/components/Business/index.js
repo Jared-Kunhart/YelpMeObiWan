@@ -35,10 +35,10 @@ const Businesses = ({sessionUser}) => {
         const closeMenu = () => {
           setShowMenu(false);
         };
-        // let sneakyDiv = document.querySelector("#root > main > nav > div.businessCard")
-        // sneakyDiv.addEventListener('click', closeMenu)
+        let sneakyDiv = document.querySelector("#root > main > nav > div.businessCard")
+        sneakyDiv.addEventListener('click', closeMenu)
 
-        // return () => document.removeEventListener("click", closeMenu);
+        return () => document.removeEventListener("click", closeMenu);
       }, [showMenu]);
 
     function randomImg() {

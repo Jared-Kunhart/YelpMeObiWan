@@ -89,7 +89,7 @@ function CreateBusinessPage({ setShowMenu }) {
         />
       </label>
       <button id="create" type="submit" disabled={errors.length > 0}>Create Business</button>
-      <button id="cancel" type="button" onClick={handleCancelClick}>Cancel</button>
+      <button id="cancel_create_business" type="button" onClick={handleCancelClick}>Cancel</button>
     </div>
     </form>
   );

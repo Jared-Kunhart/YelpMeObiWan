@@ -48,6 +48,11 @@ module.exports = {
         email: 'c3po@droidmail.com',
         username: 'C-3PO',
         hashedPassword: bcrypt.hashSync('oro')
+      },
+      {
+        email: 'chewie@chewyy.com',
+        username: 'Chewbacca',
+        hashedPassword: bcrypt.hashSync('oro')
       }
     ], {});
   },

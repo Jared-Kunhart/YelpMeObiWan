@@ -16,6 +16,8 @@ function CreateReviewPage({ hideModal, business }) {
     if (content.length < 3) errors.push("*DrruurRRP tanaNDuh?*: Did you plug it in? (Add a review)")
     if (content.length > 75) errors.push("*Beep-bee-bee-boop-bee-doo-weep*: Content too long")
     if (rating.length < 1) errors.push("*beep boop*: Add some creds (Add a rating)")
+    if (rating > 10) errors.push("Sprrpft! Phooey!: (Rating has to be less than 10)")
+    if (!Number(rating)) errors.push("Wrrk-wrrk: (Must be a Number)")
     setErrors(errors)
   }, [content, rating])
 
