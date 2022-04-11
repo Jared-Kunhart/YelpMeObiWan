@@ -23,8 +23,14 @@
 - Postgres
 - Node.Js
   
-<!-- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/react/react_64x64.png) -->
-<!-- ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/java/java_64x64.png) -->
+![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/expressjs.svg)
+   ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/git.svg)
+   ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/heroku.svg)
+   ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/javascript.svg)
+   ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/nodejs.svg)
+   ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/postgres.svg)
+   ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/react.svg)
+   ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/expressjs.svg)
   
 #### How to use this application
 
