@@ -88,8 +88,6 @@ const reviewReducer = (state = initialState, action) => {
             newState = { ...state, [action.payload.id]: action.payload }
             return newState;
         case UPDATE_REVIEW:
-            console.log(state, "before")
-            console.log(action, "ACTIONNNNNNNNNNNNN")
             return {
                 ...state,
                 [action.payload.id]: action.payload

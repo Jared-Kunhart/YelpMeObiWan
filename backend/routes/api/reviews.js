@@ -58,16 +58,5 @@ router.put('/:id(\\d+)', requireAuth, asyncHandler(async(req, res) => {
 //     },
 //   }).then(res => res.json()).then(data => console.log(data));
 
-// fetch('/api/comments', {
-//     method: 'POST',
-//     headers: {
-//       "Content-Type": "application/json",
-//       "XSRF-TOKEN": `X3nIy35I-VWukedH71Qh-HMZzWjdZbAx5dro`
-//     },
-//     body: JSON.stringify({
-//         "comment": "hello roger"
-//         "imageId": 1
-//     })
-//   }).then(res => res.json()).then(data => console.log(data));
 
 module.exports = router;
