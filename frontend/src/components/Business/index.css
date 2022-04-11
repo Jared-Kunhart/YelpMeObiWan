@@ -234,8 +234,7 @@ figure:hover+span {
 
 .cardHover figure {
 	position: relative;
-
-    cursor:context-menu;
+    cursor:pointer;
 }
 
 .cardHover figure::before {
