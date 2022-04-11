@@ -48,15 +48,15 @@
 10. You can use the Demo user or create an account to being using Yelp Me Obi-Wan.
 
 ## Business
-  View a business.
-  Create a business.
-  Edit a business.
-  Delete a business.
+  - View a business.
+  - Create a business.
+  - Edit a business.
+  - Delete a business.
 
 ## Reviews
-  View reviews.
-  Create reviews.
-  Edit reviews.
-  Delete reviews.
+  - View reviews.
+  - Create reviews.
+  - Edit reviews.
+  - Delete reviews.
   
 ## Conclusion
