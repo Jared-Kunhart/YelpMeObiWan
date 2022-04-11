@@ -229,12 +229,12 @@ figure:hover+span {
 }
 
 #businessTitle{
-    cursor:alias;
+    cursor:pointer;
 }
 
 .cardHover figure {
 	position: relative;
-    cursor:alias;
+    cursor:pointer;
 }
 
 .cardHover figure::before {
