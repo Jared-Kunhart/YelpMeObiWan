@@ -48,7 +48,7 @@ function App() {
         <Reviews />
     </Route>
     <Route>
-      <h2>404 error while crocodiles can be found in both freshwater and saltwater—although they can't live in the ocean</h2>
+      <h2>404</h2>
     </Route>
     </Switch>
     </>
