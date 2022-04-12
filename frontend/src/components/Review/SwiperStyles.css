@@ -115,12 +115,17 @@ body {
 
 @media (max-width: 768px){
 
+  .wrapper {
+    height: 70%;
+    width: 50%;
+  }
+
   .swiper {
     position: fixed;
-    height: 80%;
-    width: 80%;
-    top: 0;
-    left: 0;
+    height: 75%;
+    width: 85%;
+    top: 90px;
+    left: 50px;
     right: 0;
     bottom: 0;
   }
@@ -129,7 +134,7 @@ body {
     width: 90%;
   }
   #modal-content {
-    height: 85%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
   }
 }
