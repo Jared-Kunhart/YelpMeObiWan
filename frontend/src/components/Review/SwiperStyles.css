@@ -117,11 +117,19 @@ body {
 
   .swiper {
     position: fixed;
-    height: 70%;
-    width: 70%;
+    height: 80%;
+    width: 80%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+  }
+  #modal {
+    height: 90%;
+    width: 90%;
+  }
+  #modal-content {
+    height: 85%;
+    width: 80%;
   }
 }
