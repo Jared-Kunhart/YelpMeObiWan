@@ -9,6 +9,7 @@
 - [Conclusion](#conclusion)
 
 ## Main
+  Yelp me Obi-Wan is a take on Yelp with a theme of Star Wars. Go ahead and list a new business and leave reviews on other businesses with a Star Wars feel.
 
 #### Key Features
 - Businesses
@@ -48,15 +49,17 @@
 10. You can use the Demo user or create an account to being using Yelp Me Obi-Wan.
 
 ## Business
-  - View a business.
-  - Create a business.
-  - Edit a business.
-  - Delete a business.
+  Check out many of the other businesses already listed or go ahead and create your own. You may have to do a little research for a related Star Wars business/pictures.
+ ![image](https://user-images.githubusercontent.com/89172742/172462758-667a3017-c9a5-446f-a762-ebd36cb76500.png)
+![image](https://user-images.githubusercontent.com/89172742/172462828-56894998-acc7-4851-9f33-6de819309213.png)
+![image](https://user-images.githubusercontent.com/89172742/172462868-29ef4949-da65-4af8-b011-66a94ed18d7c.png)
+
 
 ## Reviews
-  - View reviews.
-  - Create reviews.
-  - Edit reviews.
-  - Delete reviews.
+My favorite feature of the site, go ahead and leave a review with the intuitive slider.
+  ![image](https://user-images.githubusercontent.com/89172742/172462990-e0908985-3022-48ce-bf24-30eacfd4af8c.png)
+![image](https://user-images.githubusercontent.com/89172742/172463029-5ceb7506-02de-491e-bbad-c00f0eeea05d.png)
+
   
 ## Conclusion
+This one was a lot of fun to make ! Every part of the site has some sort of Star Wars theme. There's plenty of changes and updates I'd love to make to this site in the future.
