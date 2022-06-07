@@ -50,11 +50,13 @@
 
 ## Business
   Check out many of the other businesses already listed or go ahead and create your own. You may have to do a little research for a related Star Wars business/pictures.
+  <br>
  ![image](https://user-images.githubusercontent.com/89172742/172462758-667a3017-c9a5-446f-a762-ebd36cb76500.png)
 
 
 ## Reviews
 My favorite feature of the site, go ahead and leave a review with the intuitive slider.
+  <br>
   ![image](https://user-images.githubusercontent.com/89172742/172462990-e0908985-3022-48ce-bf24-30eacfd4af8c.png)
 ![image](https://user-images.githubusercontent.com/89172742/172463029-5ceb7506-02de-491e-bbad-c00f0eeea05d.png)
 
