@@ -81,7 +81,7 @@ const Businesses = ({sessionUser}) => {
                 <div id="searchSplashArea">
                     <div className="yelpImage"><img src="/images/yelpme.png" id="yelpImg" alt=""></img></div>
                     <div id="searchBar">
-                    <input className="mainSearch" placeholder="Find Cantina's, Droid Repair, Spaceports..."></input>
+                    <input className="mainSearch" placeholder="Find Cantina's, Droid Repair, Spaceports...???"></input>
                     </div>
                 </div>
             </div>
