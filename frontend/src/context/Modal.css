@@ -19,11 +19,11 @@
 }
 
 #modal-content {
-  height: 90vh;
-  width: 70vw;
   position: absolute;
+  font-size: 20px;
+  background-color:white;
   padding: 3px;
-  border-radius: 2px;
+  border-radius: 10px;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   margin: auto;
 }

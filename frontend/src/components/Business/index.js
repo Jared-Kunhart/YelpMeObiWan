@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllBusinesses } from '../../store/business';
@@ -11,6 +11,7 @@ import './index.css'
 
 
 const Businesses = ({sessionUser}) => {
+    const history = useHistory();
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const businesses = useSelector(state => Object.values(state.business))
@@ -55,6 +56,25 @@ const Businesses = ({sessionUser}) => {
     document.querySelector("#backgroundFloat").style.backgroundImage = 'url(' + random + ')';
     }
 
+    // const [filteredList, setFilteredList] = useState([]);
+    // const [searchWord, setSearchWord] = useState("");
+
+    // useEffect(() => {
+    //     setFilteredList(
+    //         gamelist.filter((game) =>
+    //         game[0].toLowerCase().includes(searchWord.toLowerCase())
+    //         )
+    //     );
+    // }, [searchWord]);
+
+    // function handleSubmit(e) {
+    //     console.log(filteredList[0][2], "filteredList");
+    //     e.preventDefault();
+    //     if (filteredList.length > 0) {
+    //         history.push(`/games/${filteredList[0][2]}`);
+    //     }
+    // }
+
     return (
 
     <main>
@@ -81,7 +101,7 @@ const Businesses = ({sessionUser}) => {
                 <div id="searchSplashArea">
                     <div className="yelpImage"><img src="/images/yelpme.png" id="yelpImg" alt=""></img></div>
                     <div id="searchBar">
-                    <input className="mainSearch" placeholder="Find Cantina's, Droid Repair, Spaceports...???"></input>
+                    <input className="mainSearch" placeholder="Find Cantina's, Droid Repair, Spaceports..."></input>
                     </div>
                 </div>
             </div>
