@@ -149,6 +149,36 @@ a:visited {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 550px;
+    max-width: 40em;
+    height: 525px;
+    background: #fff;
+    margin: 1.5em 1.5em;
+    padding: 1em;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow-y: hidden;
+}
+
+#update_delete_business_dropdown {
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    width: 450px;
+    z-index: 10;
+    padding-bottom: 10px;
 }
 
 #businessImage {
@@ -199,22 +229,6 @@ a:visited {
     top: calc(8%);
     left: calc(36%);
     box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .7);
-}
-
-.card {
-    width: auto;
-    max-width: 40em;
-    height: auto;
-    background: #fff;
-    margin: 2.5em auto;
-    padding: 1em;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 figure {

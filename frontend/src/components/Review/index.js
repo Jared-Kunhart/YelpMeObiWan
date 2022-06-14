@@ -4,6 +4,7 @@ import { getAllReviews} from "../../store/review";
 import ReviewMenu from "./ReviewMenu";
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Rating } from 'react-simple-star-rating'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -67,7 +68,17 @@ const Reviews = ({business, sessionUser }) => {
                   {review?.User?.username}
                 </div>
                 <div id="review_rating" className="subtitle" data-swiper-parallax="-200">
-                  {review?.rating} out of 10 Beskar Ingots
+                <Rating
+                    id='review_rating_stars'
+                    ratingValue={review?.rating}
+                    readonly
+                    showTooltip
+                    tooltipDefaultText={'Beskar Ingots'}
+                    tooltipArray={['1 out of 5 Beskar Ingots', '2 out of 5 Beskar Ingots', '3 out of 5 Beskar Ingots', '4 out of 5 Beskar Ingots', '5 of 5 Beskar Ingots']}
+                    emptyIcon={<img src="/images/ingotfull.png" size={10} />}
+                    fullIcon={<img src="/images/ingotempty.png" size={100} />}
+                    fillColorArray={['#780505ac', '#9f0707ac', '#b40707c0', '#d20404d3', '#ff0000fd']}
+                    />
                 </div>
                 <div className="text" data-swiper-parallax="-100">
                   <ReviewMenu review={review} sessionUser={sessionUser} business={business} />

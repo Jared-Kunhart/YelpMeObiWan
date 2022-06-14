@@ -25,8 +25,10 @@ return (
         <button className="button" onClick={openMenu}>Edit Business</button>
         {showMenu && (
             <>
+            <div id='update_delete_business_dropdown'>
             <EditBusinessPage business={business} setShowMenu={setShowMenu} />
             <DeleteBusinessModal business={business}/>
+            </div>
             </>
         )}
     </div>

@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { editReview } from "../../store/review";
+import { Rating } from 'react-simple-star-rating'
 import '../../index.css'
 
 
 function EditReviewPage({ review, hideModal }) {
   const dispatch = useDispatch();
   const reviews = useSelector(state => Object.values(state.review))
-  const [content, setContent] = useState("");
-  const [rating, setRating] = useState("");
+  const [content, setContent] = useState(review?.content);
+  const [rating, setRating] = useState(review?.rating)
   const [errors, setErrors] = useState([]);
+
+  const handleRating = (rate = Number) => setRating(rate)
 
   useEffect(() => {
     let errors = [];
-    if (content.length < 3) errors.push("*DrruurRRP tanaNDuh?*: Did you plug it in? (Add a review)")
+    if (content.length < 3) errors.push("*DrruurRRP tanaNDuh?*:  Add a review")
     if (content.length > 75) errors.push("*Beep-bee-bee-boop-bee-doo-weep*: Content too long")
-    if (rating.length < 1) errors.push("*beep boop*: Add some creds (Add a rating)")
-    if (rating > 10) errors.push("Sprrpft! Phooey!: (Rating has to be less than 10)")
-    if (!Number(rating)) errors.push("Wrrk-wrrk: (Must be a Number)")
+    if (rating === 0) errors.push("*beep boop*: Add a rating")
     setErrors(errors)
   }, [content, rating])
 
@@ -55,11 +56,19 @@ function EditReviewPage({ review, hideModal }) {
       </label>
       <label>
         Rating:
-        <input
-          type="text"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-        />
+        <Rating
+              id='review_rating_stars'
+              onClick={handleRating}
+              ratingValue={rating}
+              transition
+              showTooltip
+              tooltipDefaultText={'Beskar Ingots'}
+              tooltipArray={['1 out of 5 Beskar Ingots', '2 out of 5 Beskar Ingots', '3 out of 5 Beskar Ingots', '4 out of 5 Beskar Ingots', '5 of 5 Beskar Ingots']}
+              size={35}
+              emptyIcon={<img src="/images/ingotfull.png" size={10} />}
+              fullIcon={<img src="/images/ingotempty.png" size={100} />}
+              fillColorArray={['#780505ac', '#9f0707ac', '#b40707c0', '#d20404d3', '#ff0000fd']}
+            />
       </label>
       <button id="review_button" type="submit" disabled={errors.length > 0}>Update Review</button>
       <button id="cancel" type="button" onClick={handleCancelClick}>Cancel</button>

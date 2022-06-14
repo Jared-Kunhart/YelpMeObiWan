@@ -45,7 +45,7 @@ body {
 }
 
 .swiper-button-next {
-    background-image: url("../../../public/images/lightsabregreen.png");
+    background-image: url("../../../public/images/lightsabregreen.gif");
     background-repeat: no-repeat;
     background-size: 40px 40px;
     width: 40px;
@@ -62,7 +62,7 @@ body {
 }
 
 .swiper-button-prev {
-    background-image: url("../../../public/images/lightsabregreenleft.png");
+    background-image: url("../../../public/images/lightsabregreenleft.gif");
     background-repeat: no-repeat;
     background-size: 40px 40px;
     width: 40px;
