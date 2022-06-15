@@ -60,18 +60,6 @@ a:visited {
     height: 600px;
 }
 
-#searchSplashArea {
-    display: flex;
-    justify-content: center;
-    height: 400px;
-    flex-direction: column;
-}
-
-.yelpImage {
-    display: flex;
-    justify-content: center;
-}
-
 #navbar {
     display: flex;
     justify-content: center;
@@ -135,14 +123,82 @@ a:visited {
     padding: 20px;
 }
 
+#searchSplashArea {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    flex-direction: column;
+}
+
+.yelpImage {
+    display: flex;
+    justify-content: center;
+}
+
 #searchBar {
     display: flex;
     justify-content: center;
 }
 
 .mainSearch {
-    width: 30%;
+    width: 570px;
     font-family: 'Dosis', sans-serif;
+}
+
+.mainSearch::placeholder {
+    font-size: 15px;
+    color: black;
+}
+
+#search-container {
+    position: absolute;
+}
+
+.searchresult-list {
+    background: linear-gradient(180deg, #ffffff 11.6%, #e7e7e7 54.73%, #cfcfcf 100%);
+    position: relative;
+    right: 60px;
+    bottom: -46px;
+}
+
+.business-li {
+    list-style: none;
+    padding: 20px 15px 20px 15px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 51px;
+    min-width: 443px;
+}
+
+.business-li:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.business-link {
+    text-decoration: none;
+    color: white;
+}
+
+#searched_business_name {
+    font-family: 'Uni Sans', sans-serif;
+    font-weight: 900;
+    color: rgba(29, 29, 29, 0.873);
+    font-size: 14px;
+}
+
+#searched_business_name:hover {
+    font-family: 'Uni Sans', sans-serif;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+#searched_business_location {
+    font-family: 'Dosis', sans-serif;
+    color: rgb(0, 0, 0);
 }
 
 .businessCard {
@@ -218,8 +274,8 @@ a:visited {
     letter-spacing: .05em;
     font-weight: 700;
 	line-height: 1.2;
-    background-color: rgba(69, 46, 33, 0.994);
-    padding: 1px;
+    background: linear-gradient(180deg, #575860 11.6%, #3A4852 54.73%, #2C2D34 100%);
+    padding: 10px 15px 15px 15px;
     margin: 1px;
     font-family: 'Dosis', sans-serif;
     text-shadow: -1px 2px 2px #000,
@@ -228,7 +284,7 @@ a:visited {
     -1px -1px 0 #000;
     top: calc(8%);
     left: calc(36%);
-    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .7);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.69), 0 15px 12px rgba(0,0,0,0.69);
 }
 
 figure {

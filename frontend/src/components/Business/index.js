@@ -5,10 +5,12 @@ import { getAllBusinesses } from '../../store/business';
 import ProfileButton from '../Navigation/ProfileButton';
 import CreateBusinessPage from "./CreateBusiness";
 import BusinessModal from "./BusinessModal";
+import BusinessSearchModal from "./BusinessSearchModal";
+import BusinessSearchModalSubmit from "./BusinessSearchModalSubmit";
 import { getAllReviews } from "../../store/review";
 import BusinessMenu from "./BusinessMenu";
+import { Modal } from "../../context/Modal"
 import './index.css'
-
 
 const Businesses = ({sessionUser}) => {
     const history = useHistory();
@@ -16,6 +18,9 @@ const Businesses = ({sessionUser}) => {
     const [showMenu, setShowMenu] = useState(false);
     const businesses = useSelector(state => Object.values(state.business))
     const reviews = useSelector(state => Object.values(state.review))
+    const businesslist = Object.values(businesses)?.map((business) => [business?.id, business?.title, business?.description, business?.location, business?.imageUrl, business?.ownerId]);
+    // console.log(businesslist)
+
 
     useEffect(() => {
         dispatch(getAllReviews())
@@ -30,17 +35,19 @@ const Businesses = ({sessionUser}) => {
         setShowMenu(true);
       };
 
-    useEffect(() => {
-        if (!showMenu) return;
+    // useEffect(() => {
+    //     if (!showMenu) return;
 
-        const closeMenu = () => {
-          setShowMenu(false);
-        };
-        // let sneakyDiv = document.querySelector("#root > main > nav > div.businessCard")
-        // sneakyDiv.addEventListener('click', closeMenu)
-
-        // return () => document.removeEventListener("click", closeMenu);
-      }, [showMenu]);
+    //     const closeMenu = () => {
+    //       setShowMenu(false);
+    //     };
+    //     let dropdown = document.querySelector("#navbar > div > div.homeLink > div.create-dropdown")
+    //     let sneakyDiv = document.querySelector("#root > main > nav > div.businessCard")
+    //     dropdown.addEventListener('click', console.log("hello"))
+    //     document.addEventListener('click', closeMenu)
+    //     // if there is a dropdown and they click, do nothing, if they click outside the drop down close menu
+    //     return () => document.removeEventListener("click", closeMenu);
+    //   }, [showMenu]);
 
     function randomImg() {
     let images = [
@@ -56,22 +63,40 @@ const Businesses = ({sessionUser}) => {
     document.querySelector("#backgroundFloat").style.backgroundImage = 'url(' + random + ')';
     }
 
-    // const [filteredList, setFilteredList] = useState([]);
-    // const [searchWord, setSearchWord] = useState("");
+    const [filteredList, setFilteredList] = useState([]);
+    // console.log(filteredList)
+    const [searchWord, setSearchWord] = useState("");
 
-    // useEffect(() => {
-    //     setFilteredList(
-    //         gamelist.filter((game) =>
-    //         game[0].toLowerCase().includes(searchWord.toLowerCase())
-    //         )
-    //     );
-    // }, [searchWord]);
+    useEffect(() => {
+        setFilteredList(
+            businesslist.filter((business) =>
+            business[1].toLowerCase().includes(searchWord.toLowerCase())
+            )
+        );
+    }, [searchWord]);
 
-    // function handleSubmit(e) {
-    //     console.log(filteredList[0][2], "filteredList");
-    //     e.preventDefault();
-    //     if (filteredList.length > 0) {
-    //         history.push(`/games/${filteredList[0][2]}`);
+    const handleSubmit = (e) => {
+        e.preventDefault()
+            return (
+                <BusinessSearchModalSubmit setSearchWord={setSearchWord} business={filteredList[0]} reviews={reviews} sessionUser={sessionUser} />
+            )
+    }
+
+    // const isActive = (e) => {
+    //     const searchInput = document.getElementsByClassName("mainSearch")
+    //     const searchin = document.getElementById("search-container")
+    //     if (searchInput === document.activeElement) {
+    //         searchin.style.display = "block"
+    //         setShowMenu(true)
+    //         return true
+    //     } else {
+    //         searchin.style.display = "none"
+    //         console.log("else statement")
+    //         setTimeout(() => {
+    //             // setSearchWord("")
+    //             // setShowMenu(false)
+    //             return false
+    //         }, 1000);
     //     }
     // }
 
@@ -101,7 +126,31 @@ const Businesses = ({sessionUser}) => {
                 <div id="searchSplashArea">
                     <div className="yelpImage"><img src="/images/yelpme.png" id="yelpImg" alt=""></img></div>
                     <div id="searchBar">
-                    <input className="mainSearch" placeholder="Find Cantina's, Droid Repair, Spaceports..."></input>
+                    <form onSubmit={(e) => handleSubmit(e)} id="search-form">
+                    <input
+                    className="mainSearch"
+                    placeholder="Find Cantina's, Droid Repair, Spaceports..."
+                    value={searchWord}
+                    type="search"
+                    // onClick={(e) => isActive(e)}
+                    // aria-haspopup={true | "menu"}
+                    // onBlur={() => searchWord("")}
+                    // onClick={() => setShowMenu(true)}
+                    // onBlur={() => setShowMenu(false)}
+                    onChange={(e) => setSearchWord(e.target.value)}
+                    ></input>
+                    </form>
+                    <div id="search-container">
+                    {searchWord != "" && (
+                    <div className="searchresult-list">
+                        {filteredList?.slice(0, 5)?.map((business) => (
+                        <div key={business[0]} className="mapped_businesses_div">
+                            <BusinessSearchModal setSearchWord={setSearchWord} business={business} reviews={reviews} sessionUser={sessionUser} />
+                        </div>
+                        ))}
+                    </div>
+                    )}
+                    </div>
                     </div>
                 </div>
             </div>
