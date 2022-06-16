@@ -1,43 +1,12 @@
 import { csrfFetch } from "./csrf";
 
+// GET ALL
 const LOAD_BUSINESSES = 'businesses/loadBusinesses';
-const ADD_ONE_BUSINESS = 'businesses/addOneBusiness';
-const REMOVE_ONE_BUSINESS = 'businesses/removeOneBusiness';
-const UPDATE_BUSINESS = 'businesses/updateBusiness'
-const GET_ONE_BUSINESS = 'businesses/getOneBusiness'
 
 const loadBusinesses = (payload) => {
     return {
         type: LOAD_BUSINESSES,
         payload
-    }
-}
-
-const getOne = (payload) => {
-    return {
-        type: GET_ONE_BUSINESS,
-        payload
-    }
-}
-
-const addOneBusiness = (payload) => {
-    return {
-        type: ADD_ONE_BUSINESS,
-        payload
-    }
-}
-
-const updateBusiness = (payload) => {
-    return {
-        type: UPDATE_BUSINESS,
-        payload
-    }
-}
-
-const removeOneBusiness = (id) => {
-    return {
-        type: REMOVE_ONE_BUSINESS,
-        payload: id
     }
 }
 
@@ -48,35 +17,87 @@ export const getAllBusinesses = () => async (dispatch) => {
     dispatch(loadBusinesses(businesses))
 }
 
+//GET ONE
+const GET_ONE_BUSINESS = 'businesses/getOneBusiness'
+
+const getOne = (payload) => {
+    return {
+        type: GET_ONE_BUSINESS,
+        payload
+    }
+}
+
 export const getOneBusiness = (id) => async (dispatch) => {
     const response = await fetch(`/api/businesses/${id}`)
     const business = await response.json()
     dispatch(getOne(business))
 }
 
-export const createBusiness = (business) => async (dispatch) => {
-    const response = await csrfFetch('/api/businesses', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(business)
-    })
-    if (response.ok) {
-        const data = await response.json()
-        const business = data.business
-        dispatch(addOneBusiness(business))
+//CREATE
+const ADD_ONE_BUSINESS = 'businesses/addOneBusiness';
+
+const addOneBusiness = (payload) => {
+    return {
+        type: ADD_ONE_BUSINESS,
+        payload
     }
 }
 
-export const editBusiness = (payload) => async (dispatch) => {
-    const response = await csrfFetch(`/api/businesses/${payload.id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+export const createBusiness = (business) => async (dispatch) => {
+    const { title, description, location, image } = business;
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("location", location);
+    if (image) formData.append("image", image)
+
+    const response = await csrfFetch('/api/businesses', {
+        method: 'POST',
+        headers: { "Content-Type": "multipart/form-data", },
+        body: formData,
     })
-    if (response.ok) {
-        const data = await response.json()
-        const updatedBusiness = data.business
-        dispatch(updateBusiness(updatedBusiness))
+
+    const data = await response.json();
+
+    if (data.errors) {
+        return data
+    }
+    dispatch(addOneBusiness(data.business));
+    return response;
+}
+
+//UPDATE
+const UPDATE_BUSINESS = 'businesses/updateBusiness'
+
+const updateBusiness = (payload) => {
+    return {
+        type: UPDATE_BUSINESS,
+        payload
+    }
+}
+
+export const editBusiness = ({payload, id}) => async (dispatch) => {
+    console.log(payload, id)
+    const response = await csrfFetch(`/api/businesses/${id}`, {
+        method: 'PUT',
+        headers: { "Content-Type": "multipart/form-data", },
+        body: payload
+    })
+    const data = await response.json();
+    if (data.errors) {
+        return data
+    }
+    dispatch(updateBusiness(data.business));
+    return data.business;
+}
+
+// DELETE
+const REMOVE_ONE_BUSINESS = 'businesses/removeOneBusiness';
+
+const removeOneBusiness = (id) => {
+    return {
+        type: REMOVE_ONE_BUSINESS,
+        payload: id
     }
 }
 
