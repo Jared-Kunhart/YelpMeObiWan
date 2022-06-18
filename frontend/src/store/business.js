@@ -77,7 +77,6 @@ const updateBusiness = (payload) => {
 }
 
 export const editBusiness = ({payload, id}) => async (dispatch) => {
-    console.log(payload, id)
     const response = await csrfFetch(`/api/businesses/${id}`, {
         method: 'PUT',
         headers: { "Content-Type": "multipart/form-data", },

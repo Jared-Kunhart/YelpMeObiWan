@@ -73,7 +73,12 @@ const Businesses = ({sessionUser}) => {
             business[1].toLowerCase().includes(searchWord.toLowerCase())
             )
         );
+        // const search_bar = document.querySelector("#search-form > input")
+        // if (searchWord.length > 1) {
+        //     search_bar.addEventListener('ariaHasPopup', setSearchWord(""))
+        // }
     }, [searchWord]);
+
 
     const handleSubmit = (e) => {
         e.preventDefault()

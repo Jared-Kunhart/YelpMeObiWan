@@ -12,7 +12,7 @@ export default function BusinessSearchModal({ business, reviews, sessionUser, se
         className="business-li"
         key={business?.id}
         value={business?.title}
-        onClick={() => [setShowModal(true), console.log("clicked")]}
+        onClick={() => setShowModal(true)}
         >
             <div id="searched_business_name">
                 {business[1]}
