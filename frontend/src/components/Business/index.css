@@ -252,6 +252,8 @@ a:visited {
 #businessDescription {
     font-family: 'Dosis', sans-serif;
     padding: 5px;
+    max-height: 125px;
+    overflow: hidden;
 }
 
 #businessLocation {
