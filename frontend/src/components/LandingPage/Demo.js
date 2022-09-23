@@ -18,7 +18,7 @@ function Demo() {
       <button onClick={e => {
         setCredential("Greedo");
         setPassword("password");
-      }} type="submit">Demo Druid Login</button>
+      }} type="submit">Demo Login</button>
     </div>
     </form>
   );
