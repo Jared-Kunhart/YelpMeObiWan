@@ -8,7 +8,7 @@ export default function BusinessSearchModalSubmit({ business, reviews, sessionUs
     const [showModal, setShowModal] = useState(true);
     return (
       <>
-        {showModal && (
+      {showModal && (
           <Modal onClose={() => [setShowModal(false), setSearchWord("")]}>
             <BusinessDetail business={businessObj} reviews={reviews} sessionUser={sessionUser} />
           </Modal>

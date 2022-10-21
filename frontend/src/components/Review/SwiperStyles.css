@@ -115,26 +115,17 @@ body {
 
 @media (max-width: 768px){
 
-  .wrapper {
-    height: 70%;
-    width: 50%;
+  .content-wrapper {
+    display: none;
   }
 
   .swiper {
     position: fixed;
     height: 75%;
-    width: 85%;
+    width: 90%;
     top: 90px;
-    left: 50px;
+    left: 0px;
     right: 0;
     bottom: 0;
-  }
-  #modal {
-    height: 90%;
-    width: 90%;
-  }
-  #modal-content {
-    height: 90%;
-    width: 90%;
   }
 }

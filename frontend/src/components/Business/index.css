@@ -33,12 +33,12 @@ input {
 } */
 
 @media (max-width: 1000px) {
-    #modal-content {
-        width: 250px;
-    }
+    /* #modal-content {
+        width: 150px;
+    } */
     #post_review_div {
         position: relative;
-        left: 15px;
+        left: 25px;
     }
     #navbar {
         width: calc(50%);
@@ -439,7 +439,7 @@ button {
     width: 100%;
 }
 
-#edit_form_review {
+.edit_form_review {
     font-family: 'Uni Sans', sans-serif;
     position: relative;
     display: flex;

@@ -53,14 +53,19 @@ module.exports = {
         email: 'chewie@chewyy.com',
         username: 'Chewbacca',
         hashedPassword: bcrypt.hashSync('oro')
-      }
+      },
+      {
+        email: 'han@solo.com',
+        username: 'Han Solo',
+        hashedPassword: bcrypt.hashSync('oro')
+      },
     ], {});
   },
 
   down: (queryInterface, Sequelize) => {
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete('Users', {
-      username: { [Op.in]: ['Greedo', 'Gerrera', 'Boba_Fett', '4-LOM', 'Admiral Ackbar', 'Admiral Thrawn', 'Ahsoka Tano', 'BB-8', 'C-3PO' ] }
+      username: { [Op.in]: ['Greedo', 'Gerrera', 'Boba_Fett', '4-LOM', 'Admiral Ackbar', 'Admiral Thrawn', 'Ahsoka Tano', 'BB-8', 'C-3PO', 'Chewbacca', 'Han Solo' ] }
     }, {});
   }
 };

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview } from "../../store/review";
 import { Rating } from 'react-simple-star-rating'
-
+import "./ModalMobileStyle.css"
 
 function CreateReviewPage({ hideModal, business }) {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ function CreateReviewPage({ hideModal, business }) {
   };
 
   return (
-    <form id="edit_form_review" onSubmit={handleSubmit}>
+    <form className="edit_form_review" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
@@ -49,6 +49,7 @@ function CreateReviewPage({ hideModal, business }) {
       <label>
         Review:
         <input
+          id="input_review"
           type="text"
           value={content}
           onChange={(e) => setContent(e.target.value)}
