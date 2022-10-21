@@ -107,7 +107,7 @@ const Businesses = ({sessionUser}) => {
 
     return (
 
-    <main>
+    <main id="main_tag">
         <nav>
         <div id="backgroundFloat" onLoad={randomImg}>
           <div id="navbar">

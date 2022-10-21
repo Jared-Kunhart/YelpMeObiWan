@@ -32,6 +32,58 @@ input {
     width: 10%;
 } */
 
+@media (max-width: 1000px) {
+    #modal-content {
+        width: 250px;
+    }
+    #post_review_div {
+        position: relative;
+        left: 15px;
+    }
+    #navbar {
+        width: calc(50%);
+    }
+    /* #backgroundFloat {
+        width: calc(500px);
+        height: calc(200px);
+    } */
+    .profile-dropdown {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 200px;
+        top: 69px;
+    }
+    .create-dropdown {
+        position: absolute;
+        width: 200px;
+        height: 450px;
+    }
+
+    .create-dropdown > form {
+        max-width: 200px;
+        position: absolute;
+    }
+
+    #cancel_create_business {
+        min-width: 80px;
+    }
+
+    .mainSearch {
+        max-width: 300px;
+        margin-top: 10px;
+    }
+    .searchresult-list {
+        position: relative;
+        left: 1px;
+        top: 52px;
+        max-width: 300px;
+    }
+    #update_delete_business_dropdown {
+        max-width: 300px;
+    }
+  }
+
 a:visited {
     color: #fff;
     text-decoration: none;
