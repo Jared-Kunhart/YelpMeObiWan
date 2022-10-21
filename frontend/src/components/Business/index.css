@@ -303,7 +303,7 @@ a:visited {
 
 #businessImage {
     width: 100%;
-    height: fit-content;
+    /* height: fit-content; */
     max-height: 375px;
 }
 
