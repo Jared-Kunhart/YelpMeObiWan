@@ -41,7 +41,7 @@ function CreateReviewPage({ hideModal, business }) {
   };
 
   return (
-    <form className="edit_form_review" onSubmit={handleSubmit}>
+    <form id="edit_form_review" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>

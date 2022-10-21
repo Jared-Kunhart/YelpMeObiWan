@@ -1,5 +1,19 @@
 @media (max-width: 768px){
-    .edit_form_review {
-      width: 200px;
+  .edit_form_review {
+    width: 200px;
+  }
+  #edit_form_review {
+    width: 250px;
+    font-family: 'Uni Sans', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 60%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: -5px -5px 30px 5px rgba(74, 66, 66, 0.543), 5px 5px 30px 5px rgba(49, 49, 52, 0.577);    background-color: rgba(0, 0, 0, 0.923);
+    color: white;
   }
 }

@@ -23,7 +23,9 @@ export default function BusinessSearchModal({ business, reviews, sessionUser, se
         </span>
         {showModal && (
           <Modal onClose={() => [setShowModal(false), setSearchWord("")]}>
+            <div id="search_modal">
             <BusinessDetail business={businessObj} reviews={reviews} sessionUser={sessionUser} />
+            </div>
           </Modal>
       )}
       </>

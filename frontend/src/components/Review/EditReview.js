@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { editReview } from "../../store/review";
 import { Rating } from 'react-simple-star-rating'
 import '../../index.css'
-import "./ModalMobileStyle.css"
 
 function EditReviewPage({ review, hideModal }) {
   const dispatch = useDispatch();
@@ -41,7 +40,7 @@ function EditReviewPage({ review, hideModal }) {
   };
 
   return (
-    <form className="edit_form_review" onSubmit={handleSubmit}>
+    <form id="edit_form_review" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
