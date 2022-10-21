@@ -34,7 +34,7 @@ input {
 
 @media (max-width: 1000px) {
     #modal{
-        height: 85%;
+        height: 69%;
     }
     #post_review_div {
         position: relative;
@@ -264,8 +264,6 @@ a:visited {
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
     width: 550px;
     max-width: 40em;
     height: 525px;
@@ -286,7 +284,9 @@ a:visited {
 @media (max-width: 768px){
 
     .card {
-
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
   }
 
