@@ -11,7 +11,6 @@ import "swiper/css/navigation";
 import "./SwiperStyles.css"
 import CreateReviewModal from "./CreateReviewModal";
 
-
 const Reviews = ({business, sessionUser }) => {
     let reviews = useSelector(state => state.review)
     reviews = Object.values(reviews)

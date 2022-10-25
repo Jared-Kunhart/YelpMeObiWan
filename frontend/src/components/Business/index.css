@@ -451,21 +451,6 @@ button {
     width: 100%;
 }
 
-.edit_form_review {
-    font-family: 'Uni Sans', sans-serif;
-    position: relative;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 60%;
-    width: 650px;
-    padding: 10px 20px;
-    border-radius: 15px;
-    box-shadow: -5px -5px 30px 5px rgba(74, 66, 66, 0.543), 5px 5px 30px 5px rgba(49, 49, 52, 0.577);    background-color: rgba(0, 0, 0, 0.923);
-    color: white;
-}
-
 #edit_form_review label {
     font-family: 'Dosis', sans-serif;
 }
