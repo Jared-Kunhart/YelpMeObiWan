@@ -1,8 +1,14 @@
 'use strict';
 const bcrypt = require('bcryptjs');
 
+let options = {};
+if (process.env.NODE_ENV === 'production') {
+  options.schema = process.env.SCHEMA;
+}
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
+    options.tableName = 'Users';
     return queryInterface.bulkInsert('Users', [
       {
         email: 'greedo@shotfirst.com',
@@ -63,6 +69,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
+    options.tableName = 'Users';
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete('Users', {
       username: { [Op.in]: ['Greedo', 'Gerrera', 'Boba_Fett', '4-LOM', 'Admiral Ackbar', 'Admiral Thrawn', 'Ahsoka Tano', 'BB-8', 'C-3PO', 'Chewbacca', 'Han Solo' ] }
